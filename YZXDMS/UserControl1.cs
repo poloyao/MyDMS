@@ -16,5 +16,13 @@ namespace YZXDMS
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Data.MySqlContext db = new Data.MySqlContext("metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=MySql.Data.MySqlClient;provider connection string=\"server=192.168.1.133;user id=root;password=root;database=yzx\"");
+            var db = new Data.YZXMySqlContext();
+            var sssaa = db.Users.ToList();
+
+        }
     }
 }

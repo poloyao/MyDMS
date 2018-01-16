@@ -16,6 +16,9 @@ namespace YZXDMS.Views.Master
         public AssignCarView()
         {
             InitializeComponent();
+
+
+
         }
     }
 }

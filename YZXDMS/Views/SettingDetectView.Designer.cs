@@ -428,9 +428,9 @@
             // simpleSeparator1
             // 
             this.simpleSeparator1.AllowHotTrack = false;
-            this.simpleSeparator1.Location = new System.Drawing.Point(231, 422);
+            this.simpleSeparator1.Location = new System.Drawing.Point(232, 422);
             this.simpleSeparator1.Name = "simpleSeparator1";
-            this.simpleSeparator1.Size = new System.Drawing.Size(2, 45);
+            this.simpleSeparator1.Size = new System.Drawing.Size(1, 45);
             // 
             // layoutControlItem4
             // 
@@ -457,7 +457,7 @@
             this.emptySpaceItem2.AllowHotTrack = false;
             this.emptySpaceItem2.Location = new System.Drawing.Point(218, 422);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(13, 45);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(14, 45);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // LCG_detector

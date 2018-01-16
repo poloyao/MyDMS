@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.Name_ed = new DevExpress.XtraEditors.TextEdit();
             this.PortName = new DevExpress.XtraEditors.ComboBoxEdit();
             this.DataBits = new DevExpress.XtraEditors.ComboBoxEdit();
@@ -46,9 +48,7 @@
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.simpleSeparator1 = new DevExpress.XtraLayout.SimpleSeparator();
             this.emptySpaceItem3 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.button1 = new System.Windows.Forms.Button();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.button2 = new System.Windows.Forms.Button();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -91,6 +91,26 @@
             this.layoutControl1.Size = new System.Drawing.Size(490, 283);
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(321, 248);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(71, 23);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "确认";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.Save_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(406, 248);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(72, 23);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "取消";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // Name_ed
             // 
@@ -271,25 +291,15 @@
             this.simpleSeparator1.AllowHotTrack = false;
             this.simpleSeparator1.Location = new System.Drawing.Point(0, 144);
             this.simpleSeparator1.Name = "simpleSeparator1";
-            this.simpleSeparator1.Size = new System.Drawing.Size(470, 2);
+            this.simpleSeparator1.Size = new System.Drawing.Size(470, 1);
             // 
             // emptySpaceItem3
             // 
             this.emptySpaceItem3.AllowHotTrack = false;
-            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 146);
+            this.emptySpaceItem3.Location = new System.Drawing.Point(0, 145);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(470, 90);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(470, 91);
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(406, 248);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(72, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "取消";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // layoutControlItem6
             // 
@@ -299,16 +309,6 @@
             this.layoutControlItem6.Size = new System.Drawing.Size(76, 27);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(321, 248);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(71, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "确认";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.Save_Click);
             // 
             // layoutControlItem8
             // 
