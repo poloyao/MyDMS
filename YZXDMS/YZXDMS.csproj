@@ -120,6 +120,12 @@
     <Compile Include="UserControl1.Designer.cs">
       <DependentUpon>UserControl1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Master\AssignCarView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Master\AssignCarView.Designer.cs">
+      <DependentUpon>AssignCarView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Master\QueryCarInfoView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -184,6 +190,9 @@
     </Compile>
     <EmbeddedResource Include="UserControl1.resx">
       <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Master\AssignCarView.resx">
+      <DependentUpon>AssignCarView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Master\QueryCarInfoView.resx">
       <DependentUpon>QueryCarInfoView.cs</DependentUpon>

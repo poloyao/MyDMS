@@ -42,7 +42,7 @@ namespace YZXDMS
                 Name = "主控",
                 MenuItems = new List<MenuItem>() {
                 new MenuItem() { Name = "主控检测", View = null },
-                new MenuItem() { Name = "待检车辆", View = null },
+                new MenuItem() { Name = "待检车辆", View = new Views.Master.AssignCarView() },
                 new MenuItem() { Name = "车籍信息", View = null },
                 new MenuItem() { Name = "信息查询", View = new Views.Master.QueryCarInfoView() }
             }
