@@ -44,7 +44,7 @@ namespace YZXDMS
                 new MenuItem() { Name = "主控检测", View = null },
                 new MenuItem() { Name = "待检车辆", View = null },
                 new MenuItem() { Name = "车籍信息", View = null },
-                new MenuItem() { Name = "信息查询", View = null }
+                new MenuItem() { Name = "信息查询", View = new Views.Master.QueryCarInfoView() }
             }
             });
 
@@ -57,6 +57,7 @@ namespace YZXDMS
             }
             });
 
+            menuItems.Add(new MenuItem() { Name = "生成车辆", View = new XtraUserControl1() });
             menuItems.Add(new MenuItem() { Name = "测试1", View = new XtraUserControl1() });
             menuItems.Add(new MenuItem() { Name = "测试2", View = new UserControl1() });
             menuGroups.Add(new MenuGroup() { Name = "测试组", MenuItems = menuItems });
