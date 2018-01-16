@@ -126,6 +126,12 @@
     <Compile Include="Views\PortView.Designer.cs">
       <DependentUpon>PortView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\SetStationView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SetStationView.Designer.cs">
+      <DependentUpon>SetStationView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\SettingDetectView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -176,6 +182,9 @@
     <EmbeddedResource Include="Views\PortView.resx">
       <DependentUpon>PortView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\SetStationView.resx">
+      <DependentUpon>SetStationView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\SettingDetectView.resx">
       <DependentUpon>SettingDetectView.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +200,17 @@
     <EmbeddedResource Include="XtraUserControl1.resx">
       <DependentUpon>XtraUserControl1.cs</DependentUpon>
     </EmbeddedResource>
+    <Content Include="Imgs\Number\number_0.png" />
+    <Content Include="Imgs\Number\number_1.png" />
+    <Content Include="Imgs\Number\number_10.png" />
+    <Content Include="Imgs\Number\number_2.png" />
+    <Content Include="Imgs\Number\number_3.png" />
+    <Content Include="Imgs\Number\number_4.png" />
+    <Content Include="Imgs\Number\number_5.png" />
+    <Content Include="Imgs\Number\number_6.png" />
+    <Content Include="Imgs\Number\number_7.png" />
+    <Content Include="Imgs\Number\number_8.png" />
+    <Content Include="Imgs\Number\number_9.png" />
     <Content Include="NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -213,9 +233,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Imgs\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\logo.png" />
   </ItemGroup>

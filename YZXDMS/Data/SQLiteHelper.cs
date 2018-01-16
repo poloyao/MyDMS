@@ -14,6 +14,9 @@ namespace YZXDMS.Data
     public class SQLiteHelper
     {
         static string path = @".\db\Config.db";
+
+        #region 移除
+
         //public static void CreateDB()
         //{
         //    SQLiteConnection cn = new SQLiteConnection("data source=" + path);
@@ -28,6 +31,8 @@ namespace YZXDMS.Data
         //        System.IO.File.Delete(path);
         //    }
         //}
+
+        #endregion
 
         /// <summary>
         /// 获取所有的检测设备信息
@@ -44,6 +49,7 @@ namespace YZXDMS.Data
                 }
                 catch (Exception ex)
                 {
+                    result = null;
                     Helper.NLogHelper.log.Error(ex.Message);
                 }
             }
@@ -51,10 +57,42 @@ namespace YZXDMS.Data
         }
 
         /// <summary>
+        /// 设置检测项目所属工位
+        /// </summary>
+        /// <param name="detectors"></param>
+        /// <returns></returns>
+        public static string SetDetectorsToStation(List<string> detectors,int stationID)
+        {
+            string result = string.Empty;
+            using (var db = new SQLiteDBContext(path))
+            {
+                try
+                {
+                    var query = db.Detector.ToList();
+                    foreach (var item in detectors)
+                    {
+                        var sing = query.Single(x => x.DetectorName == item);
+                        sing.StationValue = stationID;
+                    }
+                    db.SaveChanges();
+                    result = string.Empty; ;
+                }
+                catch (Exception ex)
+                {
+                    result = ex.Message;
+                    Helper.NLogHelper.log.Error(ex.Message);
+                }                
+            }
+            return result;
+        }
+
+
+
+        /// <summary>
         /// 获取所有的串口信息
         /// </summary>
         /// <returns></returns>
-        public static List<PortConfig> GetPortItesm()
+        public static List<PortConfig> GetPortItems()
         {
             List<PortConfig> result = new List<PortConfig>();
             using (var db = new SQLiteDBContext(path))
@@ -65,6 +103,31 @@ namespace YZXDMS.Data
                 }
                 catch (Exception ex)
                 {
+                    result = null;
+                    Helper.NLogHelper.log.Error(ex.Message);
+                }
+            }
+            return result;
+        }
+
+
+        /// <summary>
+        /// 根据id获取串口信息
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public static PortConfig GetPortItemsByID(long id)
+        {
+            PortConfig result = new PortConfig();
+            using (var db = new SQLiteDBContext(path))
+            {
+                try
+                {
+                    result = db.Port.Single(x => x.Id == id);
+                }
+                catch (Exception ex)
+                {
+                    result = null;
                     Helper.NLogHelper.log.Error(ex.Message);
                 }
             }
@@ -104,6 +167,53 @@ namespace YZXDMS.Data
                 }                              
             }
             return result;           
+        }
+
+        /// <summary>
+        /// 根据detectID获取相关联的辅助设备列表
+        /// </summary>
+        /// <param name="detectorID"></param>
+        /// <returns></returns>
+        public static List<AssistModel> GetAssistItemsByDetectID(long detectorID)
+        {
+            List<AssistModel> result = new List<AssistModel>();
+            using (var db = new SQLiteDBContext(path))
+            {
+                try
+                {
+                    var query = db.Assist.Where(x => x.DetectorId == detectorID).ToList();
+                    result = query;
+                }
+                catch (Exception ex)
+                {
+                    result = null;
+                    Helper.NLogHelper.log.Error(ex.Message);
+                }
+            }
+            return result;
+        }
+
+        /// <summary>
+        /// 获取全部的工位信息
+        /// </summary>
+        /// <returns></returns>
+        public static List<StationModel> GetStationAll()
+        {
+            List<StationModel> result = new List<StationModel>();
+            using (var db = new SQLiteDBContext(path))
+            {
+                try
+                {
+                    var query = db.Station.ToList();
+                    result = query;
+                }
+                catch (Exception ex)
+                {
+                    result = null;
+                    Helper.NLogHelper.log.Error(ex.Message);
+                }
+            }
+            return result;
         }
 
 

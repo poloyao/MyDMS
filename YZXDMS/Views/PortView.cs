@@ -34,7 +34,7 @@ namespace YZXDMS.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void simpleButton1_Click(object sender, EventArgs e)
+        private void Save_Click(object sender, EventArgs e)
         {
             PortConfig port = new PortConfig();
             port.Name = this.Name_ed.Text;
@@ -48,12 +48,11 @@ namespace YZXDMS.Views
             if (result == string.Empty)
             {
                 //ok
-                return;
+                this.Close();
             }
             else
             {
                 MessageBox.Show(result);
-                return;
             }
 
 
@@ -63,9 +62,9 @@ namespace YZXDMS.Views
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void simpleButton2_Click(object sender, EventArgs e)
+        private void Cancel_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }

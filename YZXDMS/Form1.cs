@@ -19,11 +19,8 @@ namespace YZXDMS
         {
             InitializeComponent();
             Init();
-
-
-            
-
-            }
+            System.Threading.Timer dtTimer = new System.Threading.Timer(x => UpdateDateTime(), null, 0, 1000);
+        }
 
         void Init()
         {
@@ -36,7 +33,7 @@ namespace YZXDMS
                 MenuItems = new List<MenuItem>() {
                 new MenuItem() { Name = "串口设置", View = new SettingPortView() },
                 new MenuItem() { Name = "模块设置", View = new SettingDetectView() },
-                new MenuItem() { Name = "工位设置", View = null }
+                new MenuItem() { Name = "工位设置", View = new SetStationView() }
             }
             });
 
@@ -65,9 +62,25 @@ namespace YZXDMS
             menuGroups.Add(new MenuGroup() { Name = "测试组", MenuItems = menuItems });
 
             CreateMenuGroup(this.navBarControl1, this.navigationFrame1, menuGroups);
+
+            
         }
 
+        /// <summary>
+        /// 更新时间
+        /// </summary>
+        void UpdateDateTime()
+        {
+            if (this.IsHandleCreated || IsDisposed)
+                this.Invoke(new Action(() => { this.CurrentTime.Text = DateTime.Now.ToString("yyyy年MM月dd日 hh:mm:ss"); }));
+        }
 
+        /// <summary>
+        /// 闯将菜单分组
+        /// </summary>
+        /// <param name="navControl"></param>
+        /// <param name="navFrame"></param>
+        /// <param name="menuGroups"></param>
         void CreateMenuGroup(DevExpress.XtraNavBar.NavBarControl navControl, DevExpress.XtraBars.Navigation.NavigationFrame navFrame, List<MenuGroup> menuGroups)
         {
             DevExpress.XtraGrid.Views.Tile.TileView aaa = new DevExpress.XtraGrid.Views.Tile.TileView();
@@ -83,7 +96,12 @@ namespace YZXDMS
             }
         }
 
-
+        /// <summary>
+        /// 创建菜单
+        /// </summary>
+        /// <param name="navFrame"></param>
+        /// <param name="barGroup"></param>
+        /// <param name="menuItems"></param>
         void CreateMenu(DevExpress.XtraBars.Navigation.NavigationFrame navFrame, DevExpress.XtraNavBar.NavBarGroup barGroup, List<MenuItem> menuItems)
         {
             foreach (var item in menuItems)
@@ -105,6 +123,7 @@ namespace YZXDMS
                 DevExpress.XtraNavBar.NavBarItem navbarTemp = new DevExpress.XtraNavBar.NavBarItem() { Caption = item.Name };
                 navbarTemp.LinkClicked += (s, e) =>
                 {
+                    //Mybug 最好改为点击命中后实例化view
                     navFrame.SelectedPage = (DevExpress.XtraBars.Navigation.INavigationPage)navFrame.Pages.SingleOrDefault(x => x.Caption == item.Name);
                 };
                 barGroup.ItemLinks.Add(navbarTemp);
