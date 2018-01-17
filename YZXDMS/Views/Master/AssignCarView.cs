@@ -16,8 +16,19 @@ namespace YZXDMS.Views.Master
         public AssignCarView()
         {
             InitializeComponent();
+            //Mybug 后期修改为某段时间内的信息展示，防止数据量过多。
+            this.gridControl1.DataSource = Data.YZXDBHelper.GetWaitDetections();
+            this.gridControl2.DataSource = Data.YZXDBHelper.GetWaitDetectionsByStatus(1, 1);
 
+        }
 
+        /// <summary>
+        /// 将待检车辆压如当前检测队列中
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void button1_Click(object sender, EventArgs e)
+        {
 
         }
     }

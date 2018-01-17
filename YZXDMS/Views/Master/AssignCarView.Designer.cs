@@ -28,21 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.button1 = new System.Windows.Forms.Button();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.waitDetectionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colCarInfoId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coljylsh = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLineID = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStatus = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUDP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.colCarInfoId1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coljylsh1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLineID1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colStatus1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colUDP1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.waitDetectionBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
@@ -66,6 +79,7 @@
             // 
             // gridControl2
             // 
+            this.gridControl2.DataSource = this.waitDetectionBindingSource;
             this.gridControl2.Location = new System.Drawing.Point(12, 315);
             this.gridControl2.MainView = this.gridView2;
             this.gridControl2.Name = "gridControl2";
@@ -76,6 +90,12 @@
             // 
             // gridView2
             // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colCarInfoId1,
+            this.coljylsh1,
+            this.colLineID1,
+            this.colStatus1,
+            this.colUDP1});
             this.gridView2.GridControl = this.gridControl2;
             this.gridView2.Name = "gridView2";
             this.gridView2.OptionsView.ShowGroupPanel = false;
@@ -88,9 +108,11 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "添加到当前检测列表";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // gridControl1
             // 
+            this.gridControl1.DataSource = this.waitDetectionBindingSource;
             this.gridControl1.Location = new System.Drawing.Point(12, 12);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
@@ -99,11 +121,56 @@
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
+            // waitDetectionBindingSource
+            // 
+            this.waitDetectionBindingSource.DataSource = typeof(YZXDMS.Models.WaitDetection);
+            // 
             // gridView1
             // 
+            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colCarInfoId,
+            this.coljylsh,
+            this.colLineID,
+            this.colStatus,
+            this.colUDP});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // colCarInfoId
+            // 
+            this.colCarInfoId.FieldName = "CarInfoId";
+            this.colCarInfoId.Name = "colCarInfoId";
+            this.colCarInfoId.Visible = true;
+            this.colCarInfoId.VisibleIndex = 0;
+            // 
+            // coljylsh
+            // 
+            this.coljylsh.FieldName = "jylsh";
+            this.coljylsh.Name = "coljylsh";
+            this.coljylsh.Visible = true;
+            this.coljylsh.VisibleIndex = 1;
+            // 
+            // colLineID
+            // 
+            this.colLineID.FieldName = "LineID";
+            this.colLineID.Name = "colLineID";
+            this.colLineID.Visible = true;
+            this.colLineID.VisibleIndex = 2;
+            // 
+            // colStatus
+            // 
+            this.colStatus.FieldName = "Status";
+            this.colStatus.Name = "colStatus";
+            this.colStatus.Visible = true;
+            this.colStatus.VisibleIndex = 3;
+            // 
+            // colUDP
+            // 
+            this.colUDP.FieldName = "UDP";
+            this.colUDP.Name = "colUDP";
+            this.colUDP.Visible = true;
+            this.colUDP.VisibleIndex = 4;
             // 
             // layoutControlGroup1
             // 
@@ -148,6 +215,41 @@
             this.layoutControlItem3.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem3.TextVisible = false;
             // 
+            // colCarInfoId1
+            // 
+            this.colCarInfoId1.FieldName = "CarInfoId";
+            this.colCarInfoId1.Name = "colCarInfoId1";
+            this.colCarInfoId1.Visible = true;
+            this.colCarInfoId1.VisibleIndex = 0;
+            // 
+            // coljylsh1
+            // 
+            this.coljylsh1.FieldName = "jylsh";
+            this.coljylsh1.Name = "coljylsh1";
+            this.coljylsh1.Visible = true;
+            this.coljylsh1.VisibleIndex = 1;
+            // 
+            // colLineID1
+            // 
+            this.colLineID1.FieldName = "LineID";
+            this.colLineID1.Name = "colLineID1";
+            this.colLineID1.Visible = true;
+            this.colLineID1.VisibleIndex = 2;
+            // 
+            // colStatus1
+            // 
+            this.colStatus1.FieldName = "Status";
+            this.colStatus1.Name = "colStatus1";
+            this.colStatus1.Visible = true;
+            this.colStatus1.VisibleIndex = 3;
+            // 
+            // colUDP1
+            // 
+            this.colUDP1.FieldName = "UDP";
+            this.colUDP1.Name = "colUDP1";
+            this.colUDP1.Visible = true;
+            this.colUDP1.VisibleIndex = 4;
+            // 
             // AssignCarView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -160,6 +262,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.waitDetectionBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
@@ -181,5 +284,16 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem2;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
+        private System.Windows.Forms.BindingSource waitDetectionBindingSource;
+        private DevExpress.XtraGrid.Columns.GridColumn colCarInfoId;
+        private DevExpress.XtraGrid.Columns.GridColumn coljylsh;
+        private DevExpress.XtraGrid.Columns.GridColumn colLineID;
+        private DevExpress.XtraGrid.Columns.GridColumn colStatus;
+        private DevExpress.XtraGrid.Columns.GridColumn colUDP;
+        private DevExpress.XtraGrid.Columns.GridColumn colCarInfoId1;
+        private DevExpress.XtraGrid.Columns.GridColumn coljylsh1;
+        private DevExpress.XtraGrid.Columns.GridColumn colLineID1;
+        private DevExpress.XtraGrid.Columns.GridColumn colStatus1;
+        private DevExpress.XtraGrid.Columns.GridColumn colUDP1;
     }
 }

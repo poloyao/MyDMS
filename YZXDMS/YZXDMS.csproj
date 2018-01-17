@@ -110,6 +110,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\YZXDBHelper.cs" />
     <Compile Include="Data\YZXMySqlContext.cs" />
     <Compile Include="Data\SQLiteDBContext.cs" />
     <Compile Include="Data\SQLiteHelper.cs" />
@@ -230,6 +231,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\YZXDMS.Models.DetectorModel.datasource" />
     <None Include="Properties\DataSources\YZXDMS.Models.PortConfig.datasource" />
+    <None Include="Properties\DataSources\YZXDMS.Models.WaitDetection.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

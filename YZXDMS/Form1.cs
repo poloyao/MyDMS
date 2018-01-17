@@ -15,11 +15,20 @@ namespace YZXDMS
 
     public partial class Form1 : Form
     {
+        /// <summary>
+        /// 静态计时器
+        /// </summary>
+        static System.Threading.Timer dtTimer;
         public Form1()
         {
             InitializeComponent();
             Init();
-            System.Threading.Timer dtTimer = new System.Threading.Timer(x => UpdateDateTime(), null, 0, 1000);
+            dtTimer = new System.Threading.Timer(x => UpdateDateTime(), null, 2000, 1000);
+        }
+
+        ~Form1()
+        {
+            Console.WriteLine("析构~~~~~~~~~~~~");
         }
 
         void Init()
@@ -72,6 +81,7 @@ namespace YZXDMS
         /// </summary>
         void UpdateDateTime()
         {
+            Console.WriteLine("00000000000000000000000");
             if (this.IsHandleCreated || IsDisposed)
                 this.Invoke(new Action(() => { this.CurrentTime.Text = DateTime.Now.ToString("yyyy年MM月dd日 hh:mm:ss"); }));
         }

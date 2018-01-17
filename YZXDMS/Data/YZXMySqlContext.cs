@@ -29,5 +29,7 @@ namespace YZXDMS.Data
 
         public virtual DbSet<Users> Users { get; set; }
 
+        public virtual DbSet<WaitDetection> WaitDetection { get; set; }
+
     }
 }
