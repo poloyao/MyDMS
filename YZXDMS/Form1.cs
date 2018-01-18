@@ -76,7 +76,6 @@ namespace YZXDMS
         /// </summary>
         void UpdateDateTime()
         {
-            Console.WriteLine("00000000000000000000000");
             try
             {
                 if (this.IsHandleCreated || IsDisposed)

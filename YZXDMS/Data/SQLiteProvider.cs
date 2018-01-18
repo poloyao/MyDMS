@@ -130,7 +130,7 @@ namespace YZXDMS.Data
                 if (isEdit)
                     affectRow = sqlite.Update("PortConfig", Helper.EntityToDictionary.ToMap(portInfo), "id", portInfo.Id);
                 else
-                    affectRow = sqlite.Insert("PortConfig", Helper.EntityToDictionary.ToMap(portInfo));
+                    affectRow = sqlite.Insert("PortConfig", Helper.EntityToDictionary.ToMap(portInfo,"id"));
 
                 if (affectRow == 1)
                     result = string.Empty;
