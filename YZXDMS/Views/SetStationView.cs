@@ -33,7 +33,7 @@ namespace YZXDMS.Views
         /// </summary>
         private void InitData()
         {
-            var queryDetectors = Data.SQLiteProvider.GetDetectorItems();//Data.SQLiteHelper.GetDetectorItems();
+            var queryDetectors = Data.SQLiteProvider.GetDetectorItems();
             int stationNum = 0;
             foreach (var item in ds)
             {

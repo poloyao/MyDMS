@@ -113,10 +113,6 @@
   <ItemGroup>
     <Compile Include="Data\CurrentDB.cs" />
     <Compile Include="Data\SQLiteProvider.cs" />
-    <Compile Include="Data\YZXDBHelper.cs" />
-    <Compile Include="Data\YZXMySqlContext.cs" />
-    <Compile Include="Data\SQLiteDBContext.cs" />
-    <Compile Include="Data\SQLiteHelper.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

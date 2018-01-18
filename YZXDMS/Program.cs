@@ -14,8 +14,8 @@ namespace YZXDMS
         [STAThread]
         static void Main()
         {
-            var svc = Data.CurrentDB.GetInstance();
-            var sdss = svc.DBSvc.GetWaitDetectionsByStatus(1, 1);
+            //var svc = Data.CurrentDB.GetInstance();
+            //var sdss = svc.DBSvc.GetWaitDetectionsByStatus(1, 1);
 
             //var saas = Helper.SQLiteDBHelper.sqliteHelper;
             //var station = saas.Select("select * from station");
