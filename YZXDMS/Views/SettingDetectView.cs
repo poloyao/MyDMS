@@ -28,7 +28,7 @@ namespace YZXDMS.Views
         {
             InitializeComponent();
 
-            var query = Data.SQLiteHelper.GetDetectorItems();
+            var query = Data.SQLiteProvider.GetDetectorItems();
             Items = new ObservableCollection<DetectorModel>(query);
 
             this.gridControl1.DataSource = Items;
@@ -38,6 +38,11 @@ namespace YZXDMS.Views
             SetDisplayDetector(Items[0]);
 
             this.gridControl2.DataSource = CurrentPortItems;
+
+            this.tileView1.ItemCustomize += (s, e) =>
+            {
+                Console.WriteLine(e.RowHandle);
+            };
             
         }
 
@@ -63,7 +68,7 @@ namespace YZXDMS.Views
             //判断有无串口id，有则获取并显示
             if (item.PortId > 0)
             {
-                var portInfo = Data.SQLiteHelper.GetPortItemsByID(item.PortId);
+                var portInfo = Data.SQLiteProvider.GetPortItemsByID(item.PortId);
                 if (portInfo.Id > 0)
                 {
                     this.ed_Parity.Text = portInfo.Parity.ToString();
@@ -74,10 +79,10 @@ namespace YZXDMS.Views
                 }
             }
             //获取此项目的辅助列表
-            var assistList = Data.SQLiteHelper.GetAssistItemsByDetectID(item.Id);
+            var assistList = Data.SQLiteProvider.GetAssistItemsByDetectID(item.Id);
             assistList.ForEach(x =>
             {
-                var queryPort = Data.SQLiteHelper.GetPortItemsByID(x.PortId);
+                var queryPort = Data.SQLiteProvider.GetPortItemsByID(x.PortId);
                 CurrentPortItems.Add(queryPort);
             });
 

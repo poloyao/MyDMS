@@ -5,6 +5,16 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YZXDMS", "YZXDMS\YZXDMS.csproj", "{5E57625D-6835-4B91-A851-193F736F3425}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsFormsApplication1", "WindowsFormsApplication1\WindowsFormsApplication1.csproj", "{43A7D8EB-F0BA-4E9B-8251-EEFE1B2257BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YZXDMS.IService", "YZXDMS.IService\YZXDMS.IService.csproj", "{21F8AD4B-CE02-4B96-9A24-BACE703E43D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YZXDMS.Models", "YZXDMS.Models\YZXDMS.Models.csproj", "{378380BD-3C98-4329-9CEB-9E8CB2098E85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YZXDMS.Utility", "YZXDMS.Utility\YZXDMS.Utility.csproj", "{6AFB0EE6-E61F-43B0-9B5A-88F8068A9F5D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YZXDMS.MySQLService", "YZXDMS.MySQLService\YZXDMS.MySQLService.csproj", "{2096C578-1A92-47DE-A83F-C15A7D91DD2F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +25,26 @@ Global
 		{5E57625D-6835-4B91-A851-193F736F3425}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E57625D-6835-4B91-A851-193F736F3425}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E57625D-6835-4B91-A851-193F736F3425}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43A7D8EB-F0BA-4E9B-8251-EEFE1B2257BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43A7D8EB-F0BA-4E9B-8251-EEFE1B2257BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43A7D8EB-F0BA-4E9B-8251-EEFE1B2257BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43A7D8EB-F0BA-4E9B-8251-EEFE1B2257BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21F8AD4B-CE02-4B96-9A24-BACE703E43D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21F8AD4B-CE02-4B96-9A24-BACE703E43D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21F8AD4B-CE02-4B96-9A24-BACE703E43D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21F8AD4B-CE02-4B96-9A24-BACE703E43D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{378380BD-3C98-4329-9CEB-9E8CB2098E85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{378380BD-3C98-4329-9CEB-9E8CB2098E85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{378380BD-3C98-4329-9CEB-9E8CB2098E85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{378380BD-3C98-4329-9CEB-9E8CB2098E85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6AFB0EE6-E61F-43B0-9B5A-88F8068A9F5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6AFB0EE6-E61F-43B0-9B5A-88F8068A9F5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6AFB0EE6-E61F-43B0-9B5A-88F8068A9F5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6AFB0EE6-E61F-43B0-9B5A-88F8068A9F5D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2096C578-1A92-47DE-A83F-C15A7D91DD2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2096C578-1A92-47DE-A83F-C15A7D91DD2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2096C578-1A92-47DE-A83F-C15A7D91DD2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2096C578-1A92-47DE-A83F-C15A7D91DD2F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

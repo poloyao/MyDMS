@@ -29,13 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition1 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition2 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition3 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableColumnDefinition tableColumnDefinition4 = new DevExpress.XtraEditors.TableLayout.TableColumnDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition1 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableRowDefinition tableRowDefinition2 = new DevExpress.XtraEditors.TableLayout.TableRowDefinition();
-            DevExpress.XtraEditors.TableLayout.TableSpan tableSpan1 = new DevExpress.XtraEditors.TableLayout.TableSpan();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement1 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement2 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
             DevExpress.XtraGrid.Views.Tile.TileViewItemElement tileViewItemElement3 = new DevExpress.XtraGrid.Views.Tile.TileViewItemElement();
@@ -165,10 +158,10 @@
             // gridControl2
             // 
             this.gridControl2.DataSource = this.portConfigBindingSource;
-            this.gridControl2.Location = new System.Drawing.Point(257, 128);
+            this.gridControl2.Location = new System.Drawing.Point(328, 128);
             this.gridControl2.MainView = this.gridView1;
             this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(648, 335);
+            this.gridControl2.Size = new System.Drawing.Size(577, 335);
             this.gridControl2.TabIndex = 13;
             this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -246,9 +239,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(156, 434);
+            this.button2.Location = new System.Drawing.Point(200, 434);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 41);
+            this.button2.Size = new System.Drawing.Size(92, 41);
             this.button2.TabIndex = 8;
             this.button2.Text = "添加";
             this.button2.UseVisualStyleBackColor = true;
@@ -260,7 +253,7 @@
             this.gridControl1.Location = new System.Drawing.Point(12, 12);
             this.gridControl1.MainView = this.tileView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(229, 418);
+            this.gridControl1.Size = new System.Drawing.Size(300, 418);
             this.gridControl1.TabIndex = 6;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView1});
@@ -287,54 +280,31 @@
             this.tileView1.GridControl = this.gridControl1;
             this.tileView1.Name = "tileView1";
             this.tileView1.OptionsBehavior.AllowSmoothScrolling = true;
+            this.tileView1.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Tile.TileViewEditingMode.EditForm;
+            this.tileView1.OptionsEditForm.ActionOnModifiedRowChange = DevExpress.XtraGrid.Views.Grid.EditFormModifiedAction.Nothing;
+            this.tileView1.OptionsEditForm.PopupEditFormWidth = 500;
+            this.tileView1.OptionsEditForm.ShowUpdateCancelPanel = DevExpress.Utils.DefaultBoolean.True;
+            this.tileView1.OptionsFind.AllowFindPanel = false;
             this.tileView1.OptionsTiles.AllowItemHover = true;
             this.tileView1.OptionsTiles.AllowPressAnimation = false;
-            this.tileView1.OptionsTiles.IndentBetweenGroups = 0;
-            this.tileView1.OptionsTiles.IndentBetweenItems = 0;
-            this.tileView1.OptionsTiles.ItemSize = new System.Drawing.Size(150, 48);
-            this.tileView1.OptionsTiles.LayoutMode = DevExpress.XtraGrid.Views.Tile.TileViewLayoutMode.List;
+            this.tileView1.OptionsTiles.HorizontalContentAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.tileView1.OptionsTiles.IndentBetweenGroups = 45;
+            this.tileView1.OptionsTiles.IndentBetweenItems = 10;
+            this.tileView1.OptionsTiles.ItemSize = new System.Drawing.Size(248, 100);
+            this.tileView1.OptionsTiles.LayoutMode = DevExpress.XtraGrid.Views.Tile.TileViewLayoutMode.Kanban;
             this.tileView1.OptionsTiles.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileView1.OptionsTiles.Padding = new System.Windows.Forms.Padding(0);
-            this.tileView1.OptionsTiles.RowCount = 0;
-            tableColumnDefinition1.Length.Value = 41D;
-            tableColumnDefinition2.Length.Value = 42D;
-            tableColumnDefinition3.Length.Value = 43D;
-            tableColumnDefinition4.Length.Value = 40D;
-            this.tileView1.TileColumns.Add(tableColumnDefinition1);
-            this.tileView1.TileColumns.Add(tableColumnDefinition2);
-            this.tileView1.TileColumns.Add(tableColumnDefinition3);
-            this.tileView1.TileColumns.Add(tableColumnDefinition4);
-            tableRowDefinition1.Length.Value = 16D;
-            tableRowDefinition2.Length.Value = 16D;
-            this.tileView1.TileRows.Add(tableRowDefinition1);
-            this.tileView1.TileRows.Add(tableRowDefinition2);
-            tableSpan1.RowSpan = 2;
-            this.tileView1.TileSpans.Add(tableSpan1);
+            this.tileView1.OptionsTiles.VerticalContentAlignment = DevExpress.Utils.VertAlignment.Top;
             tileViewItemElement1.Column = this.colDetectorName;
-            tileViewItemElement1.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement1.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
             tileViewItemElement1.Text = "colDetectorName";
-            tileViewItemElement1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
             tileViewItemElement2.Column = this.colDetectorType;
-            tileViewItemElement2.ColumnIndex = 1;
-            tileViewItemElement2.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement2.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement2.RowIndex = 1;
             tileViewItemElement2.Text = "colDetectorType";
-            tileViewItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement2.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleLeft;
             tileViewItemElement3.Column = this.colPortId;
-            tileViewItemElement3.ColumnIndex = 2;
-            tileViewItemElement3.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement3.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement3.RowIndex = 1;
             tileViewItemElement3.Text = "colPortId";
             tileViewItemElement3.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement4.ColumnIndex = 3;
-            tileViewItemElement4.ImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
-            tileViewItemElement4.ImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
-            tileViewItemElement4.RowIndex = 1;
+            tileViewItemElement4.Column = this.colStationValue;
             tileViewItemElement4.Text = "colStationValue";
-            tileViewItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            tileViewItemElement4.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleRight;
             this.tileView1.TileTemplate.Add(tileViewItemElement1);
             this.tileView1.TileTemplate.Add(tileViewItemElement2);
             this.tileView1.TileTemplate.Add(tileViewItemElement3);
@@ -351,49 +321,49 @@
             // 
             // ed_PortName
             // 
-            this.ed_PortName.Location = new System.Drawing.Point(520, 43);
+            this.ed_PortName.Location = new System.Drawing.Point(568, 43);
             this.ed_PortName.Name = "ed_PortName";
-            this.ed_PortName.Size = new System.Drawing.Size(159, 20);
+            this.ed_PortName.Size = new System.Drawing.Size(136, 20);
             this.ed_PortName.StyleController = this.layoutControl1;
             this.ed_PortName.TabIndex = 9;
             // 
             // ed_DetectorName
             // 
-            this.ed_DetectorName.Location = new System.Drawing.Point(308, 43);
+            this.ed_DetectorName.Location = new System.Drawing.Point(379, 43);
             this.ed_DetectorName.Name = "ed_DetectorName";
-            this.ed_DetectorName.Size = new System.Drawing.Size(157, 20);
+            this.ed_DetectorName.Size = new System.Drawing.Size(134, 20);
             this.ed_DetectorName.StyleController = this.layoutControl1;
             this.ed_DetectorName.TabIndex = 10;
             // 
             // ed_BaudRate
             // 
-            this.ed_BaudRate.Location = new System.Drawing.Point(734, 43);
+            this.ed_BaudRate.Location = new System.Drawing.Point(759, 43);
             this.ed_BaudRate.Name = "ed_BaudRate";
-            this.ed_BaudRate.Size = new System.Drawing.Size(171, 20);
+            this.ed_BaudRate.Size = new System.Drawing.Size(146, 20);
             this.ed_BaudRate.StyleController = this.layoutControl1;
             this.ed_BaudRate.TabIndex = 11;
             // 
             // ed_Parity
             // 
-            this.ed_Parity.Location = new System.Drawing.Point(308, 67);
+            this.ed_Parity.Location = new System.Drawing.Point(379, 67);
             this.ed_Parity.Name = "ed_Parity";
-            this.ed_Parity.Size = new System.Drawing.Size(157, 20);
+            this.ed_Parity.Size = new System.Drawing.Size(134, 20);
             this.ed_Parity.StyleController = this.layoutControl1;
             this.ed_Parity.TabIndex = 10;
             // 
             // ed_DataBits
             // 
-            this.ed_DataBits.Location = new System.Drawing.Point(734, 67);
+            this.ed_DataBits.Location = new System.Drawing.Point(759, 67);
             this.ed_DataBits.Name = "ed_DataBits";
-            this.ed_DataBits.Size = new System.Drawing.Size(171, 20);
+            this.ed_DataBits.Size = new System.Drawing.Size(146, 20);
             this.ed_DataBits.StyleController = this.layoutControl1;
             this.ed_DataBits.TabIndex = 9;
             // 
             // ed_StopBits
             // 
-            this.ed_StopBits.Location = new System.Drawing.Point(520, 67);
+            this.ed_StopBits.Location = new System.Drawing.Point(568, 67);
             this.ed_StopBits.Name = "ed_StopBits";
-            this.ed_StopBits.Size = new System.Drawing.Size(159, 20);
+            this.ed_StopBits.Size = new System.Drawing.Size(136, 20);
             this.ed_StopBits.StyleController = this.layoutControl1;
             this.ed_StopBits.TabIndex = 12;
             // 
@@ -417,10 +387,10 @@
             // 
             this.layoutControlItem1.Control = this.gridControl1;
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem1.MaxSize = new System.Drawing.Size(233, 0);
-            this.layoutControlItem1.MinSize = new System.Drawing.Size(233, 24);
+            this.layoutControlItem1.MaxSize = new System.Drawing.Size(304, 0);
+            this.layoutControlItem1.MinSize = new System.Drawing.Size(304, 24);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(233, 422);
+            this.layoutControlItem1.Size = new System.Drawing.Size(304, 422);
             this.layoutControlItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
@@ -428,16 +398,16 @@
             // simpleSeparator1
             // 
             this.simpleSeparator1.AllowHotTrack = false;
-            this.simpleSeparator1.Location = new System.Drawing.Point(232, 422);
+            this.simpleSeparator1.Location = new System.Drawing.Point(303, 422);
             this.simpleSeparator1.Name = "simpleSeparator1";
             this.simpleSeparator1.Size = new System.Drawing.Size(1, 45);
             // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.button2;
-            this.layoutControlItem4.Location = new System.Drawing.Point(144, 422);
+            this.layoutControlItem4.Location = new System.Drawing.Point(188, 422);
             this.layoutControlItem4.Name = "layoutControlItem4";
-            this.layoutControlItem4.Size = new System.Drawing.Size(74, 45);
+            this.layoutControlItem4.Size = new System.Drawing.Size(96, 45);
             this.layoutControlItem4.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem4.TextVisible = false;
             // 
@@ -448,16 +418,16 @@
             this.emptySpaceItem3.MaxSize = new System.Drawing.Size(0, 45);
             this.emptySpaceItem3.MinSize = new System.Drawing.Size(10, 45);
             this.emptySpaceItem3.Name = "emptySpaceItem3";
-            this.emptySpaceItem3.Size = new System.Drawing.Size(144, 45);
+            this.emptySpaceItem3.Size = new System.Drawing.Size(188, 45);
             this.emptySpaceItem3.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem3.TextSize = new System.Drawing.Size(0, 0);
             // 
             // emptySpaceItem2
             // 
             this.emptySpaceItem2.AllowHotTrack = false;
-            this.emptySpaceItem2.Location = new System.Drawing.Point(218, 422);
+            this.emptySpaceItem2.Location = new System.Drawing.Point(284, 422);
             this.emptySpaceItem2.Name = "emptySpaceItem2";
-            this.emptySpaceItem2.Size = new System.Drawing.Size(14, 45);
+            this.emptySpaceItem2.Size = new System.Drawing.Size(19, 45);
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
             // LCG_detector
@@ -471,9 +441,9 @@
             this.layoutControlItem8,
             this.layoutControlItem10,
             this.layoutControlItem6});
-            this.LCG_detector.Location = new System.Drawing.Point(233, 0);
+            this.LCG_detector.Location = new System.Drawing.Point(304, 0);
             this.LCG_detector.Name = "LCG_detector";
-            this.LCG_detector.Size = new System.Drawing.Size(676, 467);
+            this.LCG_detector.Size = new System.Drawing.Size(605, 467);
             // 
             // emptySpaceItem1
             // 
@@ -482,7 +452,7 @@
             this.emptySpaceItem1.MaxSize = new System.Drawing.Size(10, 37);
             this.emptySpaceItem1.MinSize = new System.Drawing.Size(10, 37);
             this.emptySpaceItem1.Name = "emptySpaceItem1";
-            this.emptySpaceItem1.Size = new System.Drawing.Size(652, 37);
+            this.emptySpaceItem1.Size = new System.Drawing.Size(581, 37);
             this.emptySpaceItem1.SizeConstraintsType = DevExpress.XtraLayout.SizeConstraintsType.Custom;
             this.emptySpaceItem1.TextSize = new System.Drawing.Size(0, 0);
             // 
@@ -491,25 +461,25 @@
             this.layoutControlItem3.Control = this.ed_DetectorName;
             this.layoutControlItem3.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(212, 24);
+            this.layoutControlItem3.Size = new System.Drawing.Size(189, 24);
             this.layoutControlItem3.Text = "名称";
             this.layoutControlItem3.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.ed_PortName;
-            this.layoutControlItem2.Location = new System.Drawing.Point(212, 0);
+            this.layoutControlItem2.Location = new System.Drawing.Point(189, 0);
             this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(214, 24);
+            this.layoutControlItem2.Size = new System.Drawing.Size(191, 24);
             this.layoutControlItem2.Text = "串口";
             this.layoutControlItem2.TextSize = new System.Drawing.Size(48, 14);
             // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.ed_BaudRate;
-            this.layoutControlItem5.Location = new System.Drawing.Point(426, 0);
+            this.layoutControlItem5.Location = new System.Drawing.Point(380, 0);
             this.layoutControlItem5.Name = "layoutControlItem5";
-            this.layoutControlItem5.Size = new System.Drawing.Size(226, 24);
+            this.layoutControlItem5.Size = new System.Drawing.Size(201, 24);
             this.layoutControlItem5.Text = "波特率";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -519,7 +489,7 @@
             this.layoutControlItem7.CustomizationFormText = "layoutControlItem3";
             this.layoutControlItem7.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(212, 24);
+            this.layoutControlItem7.Size = new System.Drawing.Size(189, 24);
             this.layoutControlItem7.Text = "奇偶校验";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -527,9 +497,9 @@
             // 
             this.layoutControlItem8.Control = this.ed_DataBits;
             this.layoutControlItem8.CustomizationFormText = "layoutControlItem2";
-            this.layoutControlItem8.Location = new System.Drawing.Point(426, 24);
+            this.layoutControlItem8.Location = new System.Drawing.Point(380, 24);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(226, 24);
+            this.layoutControlItem8.Size = new System.Drawing.Size(201, 24);
             this.layoutControlItem8.Text = "数据位";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -537,9 +507,9 @@
             // 
             this.layoutControlItem10.Control = this.ed_StopBits;
             this.layoutControlItem10.CustomizationFormText = "layoutControlItem6";
-            this.layoutControlItem10.Location = new System.Drawing.Point(212, 24);
+            this.layoutControlItem10.Location = new System.Drawing.Point(189, 24);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(214, 24);
+            this.layoutControlItem10.Size = new System.Drawing.Size(191, 24);
             this.layoutControlItem10.Text = "停止位";
             this.layoutControlItem10.TextSize = new System.Drawing.Size(48, 14);
             // 
@@ -548,7 +518,7 @@
             this.layoutControlItem6.Control = this.gridControl2;
             this.layoutControlItem6.Location = new System.Drawing.Point(0, 85);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(652, 339);
+            this.layoutControlItem6.Size = new System.Drawing.Size(581, 339);
             this.layoutControlItem6.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem6.TextVisible = false;
             // 

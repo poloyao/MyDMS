@@ -10,26 +10,26 @@ using YZXDMS.Models;
 
 namespace YZXDMS.Data
 {
-    [DbConfigurationType(typeof(MySqlEFConfiguration))]
-    public class YZXMySqlContext : DbContext
-    {
+    //[DbConfigurationType(typeof(MySqlEFConfiguration))]
+    //public class YZXMySqlContext : DbContext
+    //{
 
-        public YZXMySqlContext():base("name=YZXDB")
-        {
+    //    public YZXMySqlContext():base("name=YZXDB")
+    //    {
 
-        }
-        //public YZXMySqlContext(string connStrings):base(new MySqlConnectionFactory().CreateConnection(connStrings))
-        //{
+    //    }
+    //    //public YZXMySqlContext(string connStrings):base(new MySqlConnectionFactory().CreateConnection(connStrings))
+    //    //{
 
-        //}
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            //throw new UnintentionalCodeFirstException();
-        }
+    //    //}
+    //    protected override void OnModelCreating(DbModelBuilder modelBuilder)
+    //    {
+    //        //throw new UnintentionalCodeFirstException();
+    //    }
 
-        public virtual DbSet<Users> Users { get; set; }
+    //    public virtual DbSet<Users> Users { get; set; }
 
-        public virtual DbSet<WaitDetection> WaitDetection { get; set; }
+    //    public virtual DbSet<WaitDetection> WaitDetection { get; set; }
 
-    }
+    //}
 }

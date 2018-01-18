@@ -26,11 +26,6 @@ namespace YZXDMS
             dtTimer = new System.Threading.Timer(x => UpdateDateTime(), null, 2000, 1000);
         }
 
-        ~Form1()
-        {
-            Console.WriteLine("析构~~~~~~~~~~~~");
-        }
-
         void Init()
         {
             List<MenuGroup> menuGroups = new List<MenuGroup>();
@@ -82,9 +77,16 @@ namespace YZXDMS
         void UpdateDateTime()
         {
             Console.WriteLine("00000000000000000000000");
-            if (this.IsHandleCreated || IsDisposed)
-                this.Invoke(new Action(() => { this.CurrentTime.Text = DateTime.Now.ToString("yyyy年MM月dd日 hh:mm:ss"); }));
-        }
+            try
+            {
+                if (this.IsHandleCreated || IsDisposed)
+                    this.Invoke(new Action(() => { this.CurrentTime.Text = DateTime.Now.ToString("yyyy年MM月dd日 hh:mm:ss"); }));
+            }
+            catch (Exception ex)
+            {
+                Helper.NLogHelper.log.Error(ex.Message);
+            }
+         }
 
         /// <summary>
         /// 闯将菜单分组

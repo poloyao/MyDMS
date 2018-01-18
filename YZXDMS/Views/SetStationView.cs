@@ -33,7 +33,7 @@ namespace YZXDMS.Views
         /// </summary>
         private void InitData()
         {
-            var queryDetectors = Data.SQLiteHelper.GetDetectorItems();
+            var queryDetectors = Data.SQLiteProvider.GetDetectorItems();//Data.SQLiteHelper.GetDetectorItems();
             int stationNum = 0;
             foreach (var item in ds)
             {
@@ -96,7 +96,7 @@ namespace YZXDMS.Views
                     {
                         detectorsStr.Add(lvi.SubItems[0].Text);
                     }
-                    var resutl = Data.SQLiteHelper.SetDetectorsToStation(detectorsStr, stationNum);
+                    var resutl = Data.SQLiteProvider.SetDetectorsToStation(detectorsStr, stationNum);
                     if (resutl == string.Empty)
                     {
                         //ok

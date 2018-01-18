@@ -27,8 +27,8 @@ namespace YZXDMS.Views
         /// 更新列表信息
         /// </summary>
         private void UpdateItems()
-        {
-            var query = Data.SQLiteHelper.GetPortItems();
+        {            
+            var query = Data.SQLiteProvider.GetPortItems();
             Items = new ObservableCollection<PortConfig>(query);
             gridControl1.DataSource = Items;
         }

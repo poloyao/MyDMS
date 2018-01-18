@@ -44,7 +44,7 @@ namespace YZXDMS.Views
             port.Parity = (Parity)Enum.Parse(typeof(Parity), this.Parity.SelectedItem.ToString());
             port.StopBits = (StopBits)Enum.Parse(typeof(StopBits), this.StopBits.SelectedItem.ToString());
 
-            var result = Data.SQLiteHelper.SavePortInfo(port);
+            var result = Data.SQLiteProvider.SavePortInfo(port);
             if (result == string.Empty)
             {
                 //ok
