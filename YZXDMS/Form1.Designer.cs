@@ -109,7 +109,6 @@
             // 
             // navigationFrame1
             // 
-            this.navigationFrame1.AllowTransitionAnimation = DevExpress.Utils.DefaultBoolean.False;
             this.navigationFrame1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -122,9 +121,12 @@
             this.navigationFrame1.Size = new System.Drawing.Size(797, 551);
             this.navigationFrame1.TabIndex = 2;
             this.navigationFrame1.Text = "navigationFrame1";
+            this.navigationFrame1.TransitionAnimationProperties.FrameInterval = 5000;
+            this.navigationFrame1.TransitionType = DevExpress.Utils.Animation.Transitions.Fade;
             // 
             // navigationPage1
             // 
+            this.navigationPage1.Caption = "navigationPage1";
             this.navigationPage1.Controls.Add(this.pictureBox1);
             this.navigationPage1.Controls.Add(this.label3);
             this.navigationPage1.Name = "navigationPage1";

@@ -19,7 +19,15 @@ namespace YZXDMS.MySQLService
             List<WaitDetection> result = new List<WaitDetection>();
             using (var db = new YZXMySqlContext())
             {
-                result = db.WaitDetection.Where(x => x.Status == 0).ToList();
+                try
+                {
+                    result = db.WaitDetection.Where(x => x.Status == 0).ToList();
+                }
+                catch (Exception ex) 
+                {
+                    Helper.NLogHelper.log.Error(ex.Message);
+                }
+               
             }
             return result;
         }
@@ -35,9 +43,15 @@ namespace YZXDMS.MySQLService
             List<WaitDetection> result = new List<WaitDetection>();
             using (var db = new YZXMySqlContext())
             {
-                result = db.WaitDetection.Where(x => x.Status == status && x.LineID == line).ToList();
+                try
+                {
+                    result = db.WaitDetection.Where(x => x.Status == status && x.LineID == line).ToList();
+                }
+                catch (Exception ex)
+                {
+                    Helper.NLogHelper.log.Error(ex.Message);
+                }               
             }
-
             return result;
         }
     }

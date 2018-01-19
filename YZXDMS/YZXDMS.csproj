@@ -119,14 +119,6 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Helper\EntityToDictionary.cs" />
-    <Compile Include="Helper\DataSetToEntityHelper.cs" />
-    <Compile Include="Helper\NLogHelper.cs" />
-    <Compile Include="Helper\SQLiteDBHelper.cs" />
-    <Compile Include="Helper\SQLiteHelper\SQLiteColumn.cs" />
-    <Compile Include="Helper\SQLiteHelper\SQLiteColumnList.cs" />
-    <Compile Include="Helper\SQLiteHelper\SQLiteHelper.cs" />
-    <Compile Include="Helper\SQLiteHelper\SQLiteTable.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControl1.cs">
@@ -250,6 +242,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\YZXDMS.Helper\YZXDMS.Helper.csproj">
+      <Project>{9e1ca8a2-1263-4086-84f4-397d6cbe6fa5}</Project>
+      <Name>YZXDMS.Helper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\YZXDMS.IService\YZXDMS.IService.csproj">
       <Project>{21F8AD4B-CE02-4B96-9A24-BACE703E43D7}</Project>
       <Name>YZXDMS.IService</Name>

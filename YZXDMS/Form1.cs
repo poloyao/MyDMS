@@ -24,6 +24,7 @@ namespace YZXDMS
             InitializeComponent();
             Init();
             dtTimer = new System.Threading.Timer(x => UpdateDateTime(), null, 2000, 1000);
+            //this.navigationFrame1.TransitionType = DevExpress.Utils.Animation.Transitions.Fade;
         }
 
         void Init()

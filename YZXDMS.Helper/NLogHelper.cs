@@ -12,5 +12,6 @@ namespace YZXDMS.Helper
     public class NLogHelper
     {
         public static readonly NLog.Logger log = NLog.LogManager.GetCurrentClassLogger();
+        
     }
 }

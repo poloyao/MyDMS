@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YZXDMS.Utility", "YZXDMS.Ut
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YZXDMS.MySQLService", "YZXDMS.MySQLService\YZXDMS.MySQLService.csproj", "{2096C578-1A92-47DE-A83F-C15A7D91DD2F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YZXDMS.Helper", "YZXDMS.Helper\YZXDMS.Helper.csproj", "{9E1CA8A2-1263-4086-84F4-397D6CBE6FA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{2096C578-1A92-47DE-A83F-C15A7D91DD2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2096C578-1A92-47DE-A83F-C15A7D91DD2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2096C578-1A92-47DE-A83F-C15A7D91DD2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9E1CA8A2-1263-4086-84F4-397D6CBE6FA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9E1CA8A2-1263-4086-84F4-397D6CBE6FA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9E1CA8A2-1263-4086-84F4-397D6CBE6FA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9E1CA8A2-1263-4086-84F4-397D6CBE6FA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
