@@ -137,13 +137,6 @@ namespace YZXDMS
                 DevExpress.XtraBars.Navigation.NavigationPage navPageTemp = new DevExpress.XtraBars.Navigation.NavigationPage();
                 navPageTemp.Name = "";
                 navPageTemp.Caption = item.Name;
-                //if (item.View != null)
-                //{
-                //    navPageTemp.Controls.Add(item.View);
-                //    item.View.Dock = DockStyle.Fill;
-                //    item.View.Location = new System.Drawing.Point(0, 0);
-                //}
-                //this.xtraUserControl11.TabIndex = 0;
 
                 navFrame.Controls.Add(navPageTemp);
                 navFrame.Pages.Add(navPageTemp);
@@ -151,14 +144,8 @@ namespace YZXDMS
                 DevExpress.XtraNavBar.NavBarItem navbarTemp = new DevExpress.XtraNavBar.NavBarItem() { Caption = item.Name };
                 navbarTemp.LinkClicked += (s, e) =>
                 {
-                    //if (item.View != null)
-                    //{
-                    //    navPageTemp.Controls.Add(item.View);
-                    //    item.View.Dock = DockStyle.Fill;
-                    //    item.View.Location = new System.Drawing.Point(0, 0);
-                    //    System.Diagnostics.Debug.WriteLine($"临时生成了view:{item.Name}");
-                    //}
-
+                    Stopwatch sw = new Stopwatch();
+                    sw.Start();                  
                     //初次点击实例化
                     if (item.ControlType != null)
                     {
@@ -174,7 +161,8 @@ namespace YZXDMS
                     }
 
                     navFrame.SelectedPage = (DevExpress.XtraBars.Navigation.INavigationPage)navFrame.Pages.SingleOrDefault(x => x.Caption == item.Name);
-
+                    sw.Stop();
+                    System.Diagnostics.Debug.WriteLine($"创建或打开view:{item.Name}耗时：{sw.Elapsed}");
                 };
                 barGroup.ItemLinks.Add(navbarTemp);
             }
