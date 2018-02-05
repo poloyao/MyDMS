@@ -132,6 +132,7 @@ namespace YZXDMS
         /// <param name="menuItems"></param>
         void CreateMenu(DevExpress.XtraBars.Navigation.NavigationFrame navFrame, DevExpress.XtraNavBar.NavBarGroup barGroup, List<MenuItem> menuItems)
         {
+            Stopwatch sw = new Stopwatch();
             foreach (var item in menuItems)
             {
                 DevExpress.XtraBars.Navigation.NavigationPage navPageTemp = new DevExpress.XtraBars.Navigation.NavigationPage();
@@ -142,10 +143,10 @@ namespace YZXDMS
                 navFrame.Pages.Add(navPageTemp);
 
                 DevExpress.XtraNavBar.NavBarItem navbarTemp = new DevExpress.XtraNavBar.NavBarItem() { Caption = item.Name };
+                
                 navbarTemp.LinkClicked += (s, e) =>
                 {
-                    Stopwatch sw = new Stopwatch();
-                    sw.Start();                  
+                    sw.Restart();                  
                     //初次点击实例化
                     if (item.ControlType != null)
                     {
