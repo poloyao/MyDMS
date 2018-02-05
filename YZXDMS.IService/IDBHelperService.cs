@@ -10,6 +10,11 @@ namespace YZXDMS.IService
     public interface IDBHelperService
     {
         /// <summary>
+        /// 检测数据库是否存在
+        /// </summary>
+        /// <returns></returns>
+        bool DBExists();
+        /// <summary>
         /// 获取待检未分配车辆信息表.状态为0的
         /// </summary>
         /// <returns></returns>

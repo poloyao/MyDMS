@@ -14,6 +14,8 @@ namespace YZXDMS
         [STAThread]
         static void Main()
         {
+            var eww = Data.SQLiteProvider.DBExists();
+
             //var svc = Data.CurrentDB.GetInstance();
             //var sdss = svc.DBSvc.GetWaitDetectionsByStatus(1, 1);
 
@@ -44,6 +46,8 @@ namespace YZXDMS
             ////var ssas = sqlite.Insert("PortConfig", Helper.EntityToDictionary.ToMap(portInfo));
 
             //var ewew = sqlite.Update("PortConfig", Helper.EntityToDictionary.ToMap(portInfo), "id", 19);
+
+
 
 
             Application.EnableVisualStyles();

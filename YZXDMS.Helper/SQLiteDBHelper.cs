@@ -28,7 +28,9 @@ namespace YZXDMS.Helper
         /// </summary>
         public static void OpenDB()
         {
-            conn = new SQLiteConnection(@"Data Source=|DataDirectory|\db\Config.db");//连接数据库，config.DataSource数据库连接字符串  
+            //@"Data Source=|DataDirectory|\db\Config.db"
+            //AppSettingHelper.Get("SQLite");
+            conn = new SQLiteConnection($@"Data Source=|DataDirectory|\db\Config.db");//连接数据库，config.DataSource数据库连接字符串  
             cmd = new SQLiteCommand();
             cmd.Connection = conn;
             if (conn.State != System.Data.ConnectionState.Open)

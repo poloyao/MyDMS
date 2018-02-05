@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SQLite;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,16 +20,31 @@ namespace YZXDMS
         /// 静态计时器
         /// </summary>
         static System.Threading.Timer dtTimer;
+        Stopwatch sw = new Stopwatch();
         public Form1()
         {
             InitializeComponent();
+            
+            sw.Start();
+            //检测数据库是否可连接
+            var svc = Data.CurrentDB.GetInstance();
+            if (!svc.DBSvc.DBExists())
+            {
+
+                MessageBox.Show($"远程数据库无法访问，请检查连接和数据库是否已启动。耗时：{sw.Elapsed.ToString()}");
+                sw.Restart();
+            }
+
             Init();
             dtTimer = new System.Threading.Timer(x => UpdateDateTime(), null, 2000, 1000);
             //this.navigationFrame1.TransitionType = DevExpress.Utils.Animation.Transitions.Fade;
+            sw.Stop();
+            //MessageBox.Show(sw.Elapsed.ToString());
+            Helper.NLogHelper.log.Debug(sw.Elapsed.ToString());
         }
 
         void Init()
-        {
+        {       
             List<MenuGroup> menuGroups = new List<MenuGroup>();
             List<MenuItem> menuItems = new List<MenuItem>();
 
@@ -36,9 +52,9 @@ namespace YZXDMS
             {
                 Name = "设备设置",
                 MenuItems = new List<MenuItem>() {
-                new MenuItem() { Name = "串口设置", View = new SettingPortView() },
-                new MenuItem() { Name = "模块设置", View = new SettingDetectView() },
-                new MenuItem() { Name = "工位设置", View = new SetStationView() }
+                new MenuItem() { Name = "串口设置", ControlType = typeof(SettingPortView)},
+                new MenuItem() { Name = "模块设置", ControlType = typeof(SettingDetectView) },
+                new MenuItem() { Name = "工位设置", ControlType = typeof(SetStationView) }
             }
             });
 
@@ -46,10 +62,10 @@ namespace YZXDMS
             {
                 Name = "主控",
                 MenuItems = new List<MenuItem>() {
-                new MenuItem() { Name = "主控检测", View = null },
-                new MenuItem() { Name = "待检车辆", View = new Views.Master.AssignCarView() },
-                new MenuItem() { Name = "车籍信息", View = null },
-                new MenuItem() { Name = "信息查询", View = new Views.Master.QueryCarInfoView() }
+                new MenuItem() { Name = "主控检测" },
+                new MenuItem() { Name = "待检车辆", ControlType = typeof(Views.Master.AssignCarView) },
+                new MenuItem() { Name = "车籍信息" },
+                new MenuItem() { Name = "信息查询", ControlType = typeof(Views.Master.QueryCarInfoView) }
             }
             });
 
@@ -57,20 +73,19 @@ namespace YZXDMS
             {
                 Name = "参数设置",
                 MenuItems = new List<MenuItem>() {
-                new MenuItem() { Name = "基本参数", View = null },
-                new MenuItem() { Name = "时间参数", View = null }
+                new MenuItem() { Name = "基本参数" },
+                new MenuItem() { Name = "时间参数" }
             }
             });
 
-            menuItems.Add(new MenuItem() { Name = "生成车辆", View = new XtraUserControl1() });
-            menuItems.Add(new MenuItem() { Name = "测试1", View = new XtraUserControl1() });
-            menuItems.Add(new MenuItem() { Name = "测试2", View = new UserControl1() });
+            menuItems.Add(new MenuItem() { Name = "生成车辆", ControlType = typeof(XtraUserControl1) });
+            menuItems.Add(new MenuItem() { Name = "测试1", ControlType = typeof(XtraUserControl1) });
+            menuItems.Add(new MenuItem() { Name = "测试2", ControlType = typeof(UserControl1) });
             menuGroups.Add(new MenuGroup() { Name = "测试组", MenuItems = menuItems });
 
             CreateMenuGroup(this.navBarControl1, this.navigationFrame1, menuGroups);
-
             
-        }
+        }     
 
         /// <summary>
         /// 更新时间
@@ -122,12 +137,12 @@ namespace YZXDMS
                 DevExpress.XtraBars.Navigation.NavigationPage navPageTemp = new DevExpress.XtraBars.Navigation.NavigationPage();
                 navPageTemp.Name = "";
                 navPageTemp.Caption = item.Name;
-                if (item.View != null)
-                {
-                    navPageTemp.Controls.Add(item.View);
-                    item.View.Dock = DockStyle.Fill;
-                    item.View.Location = new System.Drawing.Point(0, 0);
-                }
+                //if (item.View != null)
+                //{
+                //    navPageTemp.Controls.Add(item.View);
+                //    item.View.Dock = DockStyle.Fill;
+                //    item.View.Location = new System.Drawing.Point(0, 0);
+                //}
                 //this.xtraUserControl11.TabIndex = 0;
 
                 navFrame.Controls.Add(navPageTemp);
@@ -136,11 +151,39 @@ namespace YZXDMS
                 DevExpress.XtraNavBar.NavBarItem navbarTemp = new DevExpress.XtraNavBar.NavBarItem() { Caption = item.Name };
                 navbarTemp.LinkClicked += (s, e) =>
                 {
-                    //Mybug 最好改为点击命中后实例化view
+                    //if (item.View != null)
+                    //{
+                    //    navPageTemp.Controls.Add(item.View);
+                    //    item.View.Dock = DockStyle.Fill;
+                    //    item.View.Location = new System.Drawing.Point(0, 0);
+                    //    System.Diagnostics.Debug.WriteLine($"临时生成了view:{item.Name}");
+                    //}
+
+                    //初次点击实例化
+                    if (item.ControlType != null)
+                    {
+                        if (item.View == null)
+                        {
+                            UserControl intance = (UserControl)item.ControlType.Assembly.CreateInstance(item.ControlType.FullName);
+                            item.View = intance;
+                            navPageTemp.Controls.Add(item.View);
+                            item.View.Dock = DockStyle.Fill;
+                            item.View.Location = new System.Drawing.Point(0, 0);
+                            System.Diagnostics.Debug.WriteLine($"临时生成了view:{item.Name}");
+                        }
+                    }
+
                     navFrame.SelectedPage = (DevExpress.XtraBars.Navigation.INavigationPage)navFrame.Pages.SingleOrDefault(x => x.Caption == item.Name);
+
                 };
                 barGroup.ItemLinks.Add(navbarTemp);
             }
+        }
+
+
+        UserControl aajjjj<T>() where T:UserControl
+        {
+            return default(T);
         }
 
 
@@ -165,6 +208,10 @@ namespace YZXDMS
         /// 关联视图
         /// </summary>
         public UserControl View { get; set; }
+        /// <summary>
+        /// 视图组件类型
+        /// </summary>
+        public Type ControlType { get; set; }
     }
 
     public class MenuGroup

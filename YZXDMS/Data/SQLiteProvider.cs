@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using YZXDMS.Helper;
 using YZXDMS.Models;
 
 
@@ -10,6 +11,24 @@ namespace YZXDMS.Data
 {
     public class SQLiteProvider
     {
+        /// <summary>
+        /// 你猜
+        /// </summary>
+        /// <returns></returns>
+        public static bool DBExists()
+        {
+            bool result = false;
+            try
+            {
+                var path = AppSettingHelper.Get("SQLite");
+            }
+            catch (Exception ex)
+            {
+                Helper.NLogHelper.log.Error(ex.Message);
+            }
+            return result;
+
+        }
         /// <summary>
         /// 获取所有的检测设备信息
         /// </summary>
