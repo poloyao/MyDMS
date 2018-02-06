@@ -211,5 +211,52 @@ namespace YZXDMS.Data
             }
             return null;
         }
+
+        public static List<DBSetting> GetDBSetting()
+        {
+            try
+            {
+                List<DBSetting> result = new List<DBSetting>();
+                var sqlite = Helper.SQLiteDBHelper.sqliteHelper;
+                var queryTable = sqlite.Select($"select * from DBSetting where status = 0");
+                result = Helper.DataSetToEntityHelper.DataTableToEntityList<Models.DBSetting>(queryTable, 0).ToList();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                Helper.NLogHelper.log.Error(ex.Message);
+            }
+            return null;
+        }
+
+        public static string SaveDBSetting(int dbType,string ip,string pwd)
+        {
+            string result = string.Empty;
+            var sqlite = Helper.SQLiteDBHelper.sqliteHelper;
+            sqlite.BeginTransaction();
+            try
+            {
+                var dicData = new Dictionary<string, object>();
+                dicData.Add("DBType", dbType);
+                dicData.Add("IP", ip);
+                dicData.Add("PWD", pwd);
+                dicData.Add("Status", 0);
+
+                int affectRow = sqlite.Insert("DBSetting", dicData);
+                if (affectRow == 1)
+                    result = string.Empty;
+                else
+                    throw new Exception("受影响的行数有误！执行回滚操作。");
+
+                sqlite.Commit();
+            }
+            catch (Exception ex)
+            {
+                sqlite.Rollback();
+                result = ex.Message;
+                Helper.NLogHelper.log.Error(ex.Message);
+            }
+            return result;
+        }
     }
 }

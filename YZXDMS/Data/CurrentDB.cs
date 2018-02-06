@@ -11,7 +11,7 @@ namespace YZXDMS.Data
     /// </summary>
     public class CurrentDB
     {
-        public IService.IDBHelperService DBSvc;
+        public IService.IDBHelperServer DBSvc;
 
         private static readonly CurrentDB Instance = new CurrentDB();
 
@@ -22,7 +22,7 @@ namespace YZXDMS.Data
 
         private CurrentDB()
         {
-            DBSvc = Utility.IocContainer.Resolve<IService.IDBHelperService>();
+            DBSvc = Utility.IocContainer.Resolve<IService.IDBHelperServer>();
         }
     }
 }

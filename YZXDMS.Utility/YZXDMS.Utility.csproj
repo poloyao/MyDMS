@@ -69,6 +69,10 @@
       <Project>{2096c578-1a92-47de-a83f-c15a7d91dd2f}</Project>
       <Name>YZXDMS.MySQLService</Name>
     </ProjectReference>
+    <ProjectReference Include="..\YZXDMS.SQLServer\YZXDMS.SQLServer.csproj">
+      <Project>{c598cf5b-7417-4d90-83b9-64156ff3eca5}</Project>
+      <Name>YZXDMS.SQLServer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

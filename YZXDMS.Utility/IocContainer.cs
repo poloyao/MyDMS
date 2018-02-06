@@ -34,10 +34,23 @@ namespace YZXDMS.Utility
         /// </summary>
         public void Register(ContainerBuilder builder)
         {
-            if (this.DBType == "MySql")
-                this.Builder.RegisterType<MySQLService.YZXDBHelper>().As<IDBHelperService>().SingleInstance();
+            //if (this.DBType == "MySql")
+            //    this.Builder.RegisterType<MySQLService.YZXDBHelper>().As<IDBHelperServer>().SingleInstance();
             //else
-            //   this.Builder.RegisterType<MySQLService.YZXDBHelper>().As<IDBHelperService>().SingleInstance();
+            //    this.Builder.RegisterType<SQLServer.YZXDBHelper>().As<IDBHelperServer>().SingleInstance();
+
+            switch (this.DBType)
+            {
+                case "MySql":
+                    this.Builder.RegisterType<MySQLService.YZXDBHelper>().As<IDBHelperServer>().SingleInstance();
+                    break;
+                case "Sql":
+                    this.Builder.RegisterType<YZXDMS.SQLServer.YZXDBHelper>().As<IDBHelperServer>().SingleInstance();
+                    break;
+                default:
+                    //this.Builder.RegisterType<YZXDMS.SQLServer.YZXDBHelper>().As<IDBHelperServer>().SingleInstance();
+                    break;
+            }
         }
         /// <summary>
         /// 

@@ -14,6 +14,12 @@ namespace WindowsFormsApplication1
         [STAThread]
         static void Main()
         {
+            using (var db = new YZXEntities())
+            {
+                var asss = db.Users.ToList();
+            }
+
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form3());

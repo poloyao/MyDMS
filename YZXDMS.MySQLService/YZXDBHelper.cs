@@ -9,7 +9,7 @@ using YZXDMS.Models;
 
 namespace YZXDMS.MySQLService
 {
-    public class YZXDBHelper : IDBHelperService
+    public class YZXDBHelper : IDBHelperServer
     {
         /// <summary>
         /// 是否可连接
@@ -65,6 +65,11 @@ namespace YZXDMS.MySQLService
                 Helper.NLogHelper.log.Error("数据库未连接");
             
             return IsDBExists;
+        }
+
+        public List<Users> GetUsers()
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>

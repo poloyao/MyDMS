@@ -1,0 +1,796 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="YZXModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="BFD">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="CarInfoID" Type="int" />
+          <Property Name="Asis" Type="int" />
+          <Property Name="jylsh" Type="varchar" MaxLength="50" />
+          <Property Name="jyjgbh" Type="varchar" MaxLength="50" />
+          <Property Name="jcxdh" Type="varchar" MaxLength="50" />
+          <Property Name="jyxm" Type="varchar" MaxLength="50" />
+          <Property Name="jycs" Type="varchar" MaxLength="50" />
+          <Property Name="zlz" Type="varchar" MaxLength="50" />
+          <Property Name="ylz" Type="varchar" MaxLength="50" />
+          <Property Name="qhzzdl" Type="varchar" MaxLength="50" />
+          <Property Name="qhyzdl" Type="varchar" MaxLength="50" />
+          <Property Name="qczzdl" Type="varchar" MaxLength="50" />
+          <Property Name="qcyzdl" Type="varchar" MaxLength="50" />
+          <Property Name="dll" Type="varchar" MaxLength="50" />
+          <Property Name="zdlpd" Type="varchar" MaxLength="50" />
+          <Property Name="bphl" Type="varchar" MaxLength="50" />
+          <Property Name="bphlpd" Type="varchar" MaxLength="50" />
+          <Property Name="jzzh" Type="varchar" MaxLength="50" />
+          <Property Name="jzzzdl" Type="varchar" MaxLength="50" />
+          <Property Name="jzbphl" Type="varchar" MaxLength="50" />
+          <Property Name="jzbphlpd" Type="varchar" MaxLength="50" />
+          <Property Name="zdpd" Type="varchar" MaxLength="50" />
+          <Property Name="zldtlh" Type="varchar" MaxLength="50" />
+          <Property Name="yldtlh" Type="varchar" MaxLength="50" />
+          <Property Name="zdlqx" Type="varchar" MaxLength="50" />
+          <Property Name="UPD" Type="datetime" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="CarInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="JYLSH" Type="varchar" MaxLength="17" />
+          <Property Name="JYJGBH" Type="varchar" MaxLength="10" />
+          <Property Name="JCXDH" Type="varchar" MaxLength="2" />
+          <Property Name="XH" Type="varchar" MaxLength="14" />
+          <Property Name="HPZL" Type="varchar" MaxLength="2" />
+          <Property Name="HPHM" Type="varchar" MaxLength="15" />
+          <Property Name="CLSBDH" Type="varchar" MaxLength="25" />
+          <Property Name="FDJH" Type="varchar" MaxLength="30" />
+          <Property Name="CSYS" Type="varchar" MaxLength="5" />
+          <Property Name="SYXZ" Type="char" MaxLength="1" />
+          <Property Name="CCDJRQ" Type="datetime" />
+          <Property Name="JYRQ" Type="datetime" />
+          <Property Name="JYYXQZ" Type="datetime" />
+          <Property Name="BXZZRQ" Type="datetime" />
+          <Property Name="RLZL" Type="varchar" MaxLength="3" />
+          <Property Name="GL" Type="int" />
+          <Property Name="ZS" Type="int" />
+          <Property Name="ZJ" Type="int" />
+          <Property Name="QLJ" Type="int" />
+          <Property Name="HLJ" Type="int" />
+          <Property Name="ZZL" Type="int" />
+          <Property Name="ZBZL" Type="int" />
+          <Property Name="CCRQ" Type="datetime" />
+          <Property Name="QDXS" Type="varchar" MaxLength="5" />
+          <Property Name="ZCZS" Type="int" />
+          <Property Name="ZCZW" Type="varchar" MaxLength="5" />
+          <Property Name="ZZS" Type="int" />
+          <Property Name="ZZLY" Type="char" MaxLength="1" />
+          <Property Name="QZDZ" Type="varchar" MaxLength="2" />
+          <Property Name="YGDDTZ" Type="char" MaxLength="1" />
+          <Property Name="ZXZXJXS" Type="char" MaxLength="1" />
+          <Property Name="LCBDS" Type="int" />
+          <Property Name="JYXM" Type="varchar" MaxLength="100" />
+          <Property Name="JYLB" Type="varchar" MaxLength="2" />
+          <Property Name="BHGX" Type="varchar" MaxLength="50" />
+          <Property Name="CCDLSJ" Type="datetime" />
+          <Property Name="DLSJ" Type="datetime" />
+          <Property Name="JYCS" Type="int" />
+          <Property Name="DLY" Type="varchar" MaxLength="30" />
+          <Property Name="YCY" Type="varchar" MaxLength="30" />
+          <Property Name="WJY" Type="varchar" MaxLength="30" />
+          <Property Name="DTJYY" Type="varchar" MaxLength="30" />
+          <Property Name="DPJYY" Type="varchar" MaxLength="30" />
+          <Property Name="CLPP1" Type="varchar" MaxLength="40" />
+          <Property Name="CLXH" Type="varchar" MaxLength="32" />
+          <Property Name="SYR" Type="varchar" MaxLength="128" />
+          <Property Name="CLLX" Type="varchar" MaxLength="3" />
+          <Property Name="CWKC" Type="int" />
+          <Property Name="CWKK" Type="int" />
+          <Property Name="CWKG" Type="int" />
+          <Property Name="CLYT" Type="char" MaxLength="2" />
+          <Property Name="YTSX" Type="char" MaxLength="1" />
+          <Property Name="DLYSFZH" Type="varchar" MaxLength="30" />
+          <Property Name="YCYSFZH" Type="varchar" MaxLength="30" />
+          <Property Name="WJYSFZH" Type="varchar" MaxLength="30" />
+          <Property Name="DTJYYSFZH" Type="varchar" MaxLength="30" />
+          <Property Name="DPJYYSFZH" Type="varchar" MaxLength="30" />
+          <Property Name="CLSSLB" Type="varchar" MaxLength="2" />
+          <Property Name="JCXLB" Type="char" MaxLength="1" />
+          <Property Name="SJR" Type="varchar" MaxLength="30" />
+          <Property Name="SJRSFZH" Type="varchar" MaxLength="30" />
+          <Property Name="UDP" Type="datetime" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="ComplexResult">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Speed" Type="int" />
+          <Property Name="p2" Type="int" />
+        </EntityType>
+        <EntityType Name="FaceTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SFZH" Type="varchar" MaxLength="18" />
+          <Property Name="NAME" Type="varchar" MaxLength="60" />
+          <Property Name="JCZBH" Type="varchar" MaxLength="40" />
+          <Property Name="JYLSH" Type="varchar" MaxLength="40" />
+          <Property Name="HPHM" Type="varchar" MaxLength="10" />
+          <Property Name="HPZL" Type="varchar" MaxLength="2" />
+          <Property Name="FEATURES" Type="image" />
+          <Property Name="FACEIMG" Type="image" />
+          <Property Name="JCSJ" Type="text" />
+        </EntityType>
+        <EntityType Name="ParkBFD">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="CarInfoID" Type="int" />
+          <Property Name="jylsh" Type="varchar" MaxLength="50" />
+          <Property Name="jyjgbh" Type="varchar" MaxLength="50" />
+          <Property Name="jcxdh" Type="varchar" MaxLength="50" />
+          <Property Name="jyxm" Type="varchar" MaxLength="50" />
+          <Property Name="jycs" Type="varchar" MaxLength="50" />
+          <Property Name="yzzczdl" Type="varchar" MaxLength="50" />
+          <Property Name="ezzczdl" Type="varchar" MaxLength="50" />
+          <Property Name="sanzzczdl" Type="varchar" MaxLength="50" />
+          <Property Name="sizzczdl" Type="varchar" MaxLength="50" />
+          <Property Name="wzzczdl" Type="varchar" MaxLength="50" />
+          <Property Name="zczczdl" Type="varchar" MaxLength="50" />
+          <Property Name="tczzdl" Type="varchar" MaxLength="50" />
+          <Property Name="tcyzdl" Type="varchar" MaxLength="50" />
+          <Property Name="tczdl" Type="varchar" MaxLength="50" />
+          <Property Name="tczdpd" Type="varchar" MaxLength="50" />
+          <Property Name="UDP" Type="datetime" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="Powers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Code" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="SafaResult">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Speed" Type="int" />
+          <Property Name="p2" Type="int" />
+        </EntityType>
+        <EntityType Name="Speed">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="jylsh" Type="varchar" MaxLength="50" />
+          <Property Name="CarInfoID" Type="int" />
+          <Property Name="Mode" Type="int" />
+          <Property Name="SDBZ" Type="varchar" MaxLength="50" />
+          <Property Name="SDCS" Type="varchar" MaxLength="50" />
+          <Property Name="SDB" Type="varchar" MaxLength="50" />
+          <Property Name="SDBPJ" Type="varchar" MaxLength="50" />
+          <Property Name="UPD" Type="datetime" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="TestResult">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="JYLSH" Type="nchar" MaxLength="40" />
+          <Property Name="JYJGBH" Type="nchar" MaxLength="10" />
+          <Property Name="JCXDH" Type="nchar" MaxLength="10" />
+          <Property Name="JYXM" Type="nchar" MaxLength="10" />
+          <Property Name="UDP" Type="datetime" Nullable="false" />
+          <Property Name="Satatus" Type="int" Nullable="false" />
+          <Property Name="Shape" Type="nchar" MaxLength="10" />
+          <Property Name="SideSlide" Type="nchar" MaxLength="10" />
+          <Property Name="Speed" Type="nchar" MaxLength="10" />
+          <Property Name="Light" Type="nchar" MaxLength="10" />
+          <Property Name="Brake" Type="nchar" MaxLength="10" />
+          <Property Name="Weigh" Type="nchar" MaxLength="10" />
+          <Property Name="Bottom" Type="nchar" MaxLength="10" />
+          <Property Name="BoottomInterval" Type="nchar" MaxLength="10" />
+          <Property Name="SoundLevel" Type="nchar" MaxLength="10" />
+          <Property Name="Power" Type="nchar" MaxLength="10" />
+          <Property Name="FuelConsumption" Type="nchar" MaxLength="10" />
+          <Property Name="Exhaust" Type="nchar" MaxLength="10" />
+          <Property Name="Balancer" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="TestSpeed">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="csdscz" Type="nchar" MaxLength="10" />
+          <Property Name="csbpd" Type="nchar" MaxLength="10" />
+          <Property Name="UDP" Type="datetime" />
+          <Property Name="Status" Type="int" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Account" Type="varchar" MaxLength="50" />
+          <Property Name="PWD" Type="varchar" MaxLength="50" />
+          <Property Name="Title" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="WaitDetection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CarInfoId" Type="int" Nullable="false" />
+          <Property Name="jylsh" Type="varchar" MaxLength="50" />
+          <Property Name="LineID" Type="int" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="UDP" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="YZXModelStoreContainer">
+          <EntitySet Name="BFD" EntityType="Self.BFD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CarInfo" EntityType="Self.CarInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ComplexResult" EntityType="Self.ComplexResult" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FaceTable" EntityType="Self.FaceTable" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ParkBFD" EntityType="Self.ParkBFD" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Powers" EntityType="Self.Powers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SafaResult" EntityType="Self.SafaResult" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Speed" EntityType="Self.Speed" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TestResult" EntityType="Self.TestResult" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TestSpeed" EntityType="Self.TestSpeed" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WaitDetection" EntityType="Self.WaitDetection" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="YZXModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="BFD">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CarInfoID" Type="Int32" />
+          <Property Name="Asis" Type="Int32" />
+          <Property Name="jylsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="jyjgbh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="jcxdh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="jyxm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="jycs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="zlz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ylz" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="qhzzdl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="qhyzdl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="qczzdl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="qcyzdl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dll" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="zdlpd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="bphl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="bphlpd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="jzzh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="jzzzdl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="jzbphl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="jzbphlpd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="zdpd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="zldtlh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="yldtlh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="zdlqx" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPD" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="CarInfo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="JYLSH" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="JYJGBH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="JCXDH" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="XH" Type="String" MaxLength="14" FixedLength="false" Unicode="false" />
+          <Property Name="HPZL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="HPHM" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="CLSBDH" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="FDJH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CSYS" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="SYXZ" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="CCDJRQ" Type="DateTime" Precision="3" />
+          <Property Name="JYRQ" Type="DateTime" Precision="3" />
+          <Property Name="JYYXQZ" Type="DateTime" Precision="3" />
+          <Property Name="BXZZRQ" Type="DateTime" Precision="3" />
+          <Property Name="RLZL" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="GL" Type="Int32" />
+          <Property Name="ZS" Type="Int32" />
+          <Property Name="ZJ" Type="Int32" />
+          <Property Name="QLJ" Type="Int32" />
+          <Property Name="HLJ" Type="Int32" />
+          <Property Name="ZZL" Type="Int32" />
+          <Property Name="ZBZL" Type="Int32" />
+          <Property Name="CCRQ" Type="DateTime" Precision="3" />
+          <Property Name="QDXS" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="ZCZS" Type="Int32" />
+          <Property Name="ZCZW" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="ZZS" Type="Int32" />
+          <Property Name="ZZLY" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="QZDZ" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="YGDDTZ" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="ZXZXJXS" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="LCBDS" Type="Int32" />
+          <Property Name="JYXM" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="JYLB" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="BHGX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CCDLSJ" Type="DateTime" Precision="3" />
+          <Property Name="DLSJ" Type="DateTime" Precision="3" />
+          <Property Name="JYCS" Type="Int32" />
+          <Property Name="DLY" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="YCY" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="WJY" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DTJYY" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DPJYY" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CLPP1" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CLXH" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="SYR" Type="String" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Name="CLLX" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="CWKC" Type="Int32" />
+          <Property Name="CWKK" Type="Int32" />
+          <Property Name="CWKG" Type="Int32" />
+          <Property Name="CLYT" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="YTSX" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="DLYSFZH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="YCYSFZH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="WJYSFZH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DTJYYSFZH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="DPJYYSFZH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CLSSLB" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="JCXLB" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="SJR" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SJRSFZH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="UDP" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ComplexResult">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Speed" Type="Int32" />
+          <Property Name="p2" Type="Int32" />
+        </EntityType>
+        <EntityType Name="FaceTable">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SFZH" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="JCZBH" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="JYLSH" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="HPHM" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="HPZL" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="FEATURES" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="FACEIMG" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="JCSJ" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ParkBFD">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="CarInfoID" Type="Int32" />
+          <Property Name="jylsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="jyjgbh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="jcxdh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="jyxm" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="jycs" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="yzzczdl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ezzczdl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sanzzczdl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="sizzczdl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="wzzczdl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="zczczdl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tczzdl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tcyzdl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tczdl" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tczdpd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UDP" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Powers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="SafaResult">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Speed" Type="Int32" />
+          <Property Name="p2" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Speed">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="jylsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CarInfoID" Type="Int32" />
+          <Property Name="Mode" Type="Int32" />
+          <Property Name="SDBZ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SDCS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SDB" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SDBPJ" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UPD" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TestResult">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="JYLSH" Type="String" MaxLength="40" FixedLength="true" Unicode="true" />
+          <Property Name="JYJGBH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="JCXDH" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="JYXM" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="UDP" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Satatus" Type="Int32" Nullable="false" />
+          <Property Name="Shape" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="SideSlide" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Speed" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Light" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Brake" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Weigh" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Bottom" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="BoottomInterval" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="SoundLevel" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Power" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="FuelConsumption" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Exhaust" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Balancer" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TestSpeed">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="csdscz" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="csbpd" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="UDP" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Account" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="PWD" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="WaitDetection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CarInfoId" Type="Int32" Nullable="false" />
+          <Property Name="jylsh" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LineID" Type="Int32" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="UDP" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityContainer Name="YZXEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BFD" EntityType="Self.BFD" />
+          <EntitySet Name="CarInfo" EntityType="Self.CarInfo" />
+          <EntitySet Name="ComplexResult" EntityType="Self.ComplexResult" />
+          <EntitySet Name="FaceTable" EntityType="Self.FaceTable" />
+          <EntitySet Name="ParkBFD" EntityType="Self.ParkBFD" />
+          <EntitySet Name="Powers" EntityType="Self.Powers" />
+          <EntitySet Name="SafaResult" EntityType="Self.SafaResult" />
+          <EntitySet Name="Speed" EntityType="Self.Speed" />
+          <EntitySet Name="TestResult" EntityType="Self.TestResult" />
+          <EntitySet Name="TestSpeed" EntityType="Self.TestSpeed" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+          <EntitySet Name="WaitDetection" EntityType="Self.WaitDetection" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="YZXModelStoreContainer" CdmEntityContainer="YZXEntities">
+          <EntitySetMapping Name="BFD">
+            <EntityTypeMapping TypeName="YZXModel.BFD">
+              <MappingFragment StoreEntitySet="BFD">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CarInfoID" ColumnName="CarInfoID" />
+                <ScalarProperty Name="Asis" ColumnName="Asis" />
+                <ScalarProperty Name="jylsh" ColumnName="jylsh" />
+                <ScalarProperty Name="jyjgbh" ColumnName="jyjgbh" />
+                <ScalarProperty Name="jcxdh" ColumnName="jcxdh" />
+                <ScalarProperty Name="jyxm" ColumnName="jyxm" />
+                <ScalarProperty Name="jycs" ColumnName="jycs" />
+                <ScalarProperty Name="zlz" ColumnName="zlz" />
+                <ScalarProperty Name="ylz" ColumnName="ylz" />
+                <ScalarProperty Name="qhzzdl" ColumnName="qhzzdl" />
+                <ScalarProperty Name="qhyzdl" ColumnName="qhyzdl" />
+                <ScalarProperty Name="qczzdl" ColumnName="qczzdl" />
+                <ScalarProperty Name="qcyzdl" ColumnName="qcyzdl" />
+                <ScalarProperty Name="dll" ColumnName="dll" />
+                <ScalarProperty Name="zdlpd" ColumnName="zdlpd" />
+                <ScalarProperty Name="bphl" ColumnName="bphl" />
+                <ScalarProperty Name="bphlpd" ColumnName="bphlpd" />
+                <ScalarProperty Name="jzzh" ColumnName="jzzh" />
+                <ScalarProperty Name="jzzzdl" ColumnName="jzzzdl" />
+                <ScalarProperty Name="jzbphl" ColumnName="jzbphl" />
+                <ScalarProperty Name="jzbphlpd" ColumnName="jzbphlpd" />
+                <ScalarProperty Name="zdpd" ColumnName="zdpd" />
+                <ScalarProperty Name="zldtlh" ColumnName="zldtlh" />
+                <ScalarProperty Name="yldtlh" ColumnName="yldtlh" />
+                <ScalarProperty Name="zdlqx" ColumnName="zdlqx" />
+                <ScalarProperty Name="UPD" ColumnName="UPD" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CarInfo">
+            <EntityTypeMapping TypeName="YZXModel.CarInfo">
+              <MappingFragment StoreEntitySet="CarInfo">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="JYLSH" ColumnName="JYLSH" />
+                <ScalarProperty Name="JYJGBH" ColumnName="JYJGBH" />
+                <ScalarProperty Name="JCXDH" ColumnName="JCXDH" />
+                <ScalarProperty Name="XH" ColumnName="XH" />
+                <ScalarProperty Name="HPZL" ColumnName="HPZL" />
+                <ScalarProperty Name="HPHM" ColumnName="HPHM" />
+                <ScalarProperty Name="CLSBDH" ColumnName="CLSBDH" />
+                <ScalarProperty Name="FDJH" ColumnName="FDJH" />
+                <ScalarProperty Name="CSYS" ColumnName="CSYS" />
+                <ScalarProperty Name="SYXZ" ColumnName="SYXZ" />
+                <ScalarProperty Name="CCDJRQ" ColumnName="CCDJRQ" />
+                <ScalarProperty Name="JYRQ" ColumnName="JYRQ" />
+                <ScalarProperty Name="JYYXQZ" ColumnName="JYYXQZ" />
+                <ScalarProperty Name="BXZZRQ" ColumnName="BXZZRQ" />
+                <ScalarProperty Name="RLZL" ColumnName="RLZL" />
+                <ScalarProperty Name="GL" ColumnName="GL" />
+                <ScalarProperty Name="ZS" ColumnName="ZS" />
+                <ScalarProperty Name="ZJ" ColumnName="ZJ" />
+                <ScalarProperty Name="QLJ" ColumnName="QLJ" />
+                <ScalarProperty Name="HLJ" ColumnName="HLJ" />
+                <ScalarProperty Name="ZZL" ColumnName="ZZL" />
+                <ScalarProperty Name="ZBZL" ColumnName="ZBZL" />
+                <ScalarProperty Name="CCRQ" ColumnName="CCRQ" />
+                <ScalarProperty Name="QDXS" ColumnName="QDXS" />
+                <ScalarProperty Name="ZCZS" ColumnName="ZCZS" />
+                <ScalarProperty Name="ZCZW" ColumnName="ZCZW" />
+                <ScalarProperty Name="ZZS" ColumnName="ZZS" />
+                <ScalarProperty Name="ZZLY" ColumnName="ZZLY" />
+                <ScalarProperty Name="QZDZ" ColumnName="QZDZ" />
+                <ScalarProperty Name="YGDDTZ" ColumnName="YGDDTZ" />
+                <ScalarProperty Name="ZXZXJXS" ColumnName="ZXZXJXS" />
+                <ScalarProperty Name="LCBDS" ColumnName="LCBDS" />
+                <ScalarProperty Name="JYXM" ColumnName="JYXM" />
+                <ScalarProperty Name="JYLB" ColumnName="JYLB" />
+                <ScalarProperty Name="BHGX" ColumnName="BHGX" />
+                <ScalarProperty Name="CCDLSJ" ColumnName="CCDLSJ" />
+                <ScalarProperty Name="DLSJ" ColumnName="DLSJ" />
+                <ScalarProperty Name="JYCS" ColumnName="JYCS" />
+                <ScalarProperty Name="DLY" ColumnName="DLY" />
+                <ScalarProperty Name="YCY" ColumnName="YCY" />
+                <ScalarProperty Name="WJY" ColumnName="WJY" />
+                <ScalarProperty Name="DTJYY" ColumnName="DTJYY" />
+                <ScalarProperty Name="DPJYY" ColumnName="DPJYY" />
+                <ScalarProperty Name="CLPP1" ColumnName="CLPP1" />
+                <ScalarProperty Name="CLXH" ColumnName="CLXH" />
+                <ScalarProperty Name="SYR" ColumnName="SYR" />
+                <ScalarProperty Name="CLLX" ColumnName="CLLX" />
+                <ScalarProperty Name="CWKC" ColumnName="CWKC" />
+                <ScalarProperty Name="CWKK" ColumnName="CWKK" />
+                <ScalarProperty Name="CWKG" ColumnName="CWKG" />
+                <ScalarProperty Name="CLYT" ColumnName="CLYT" />
+                <ScalarProperty Name="YTSX" ColumnName="YTSX" />
+                <ScalarProperty Name="DLYSFZH" ColumnName="DLYSFZH" />
+                <ScalarProperty Name="YCYSFZH" ColumnName="YCYSFZH" />
+                <ScalarProperty Name="WJYSFZH" ColumnName="WJYSFZH" />
+                <ScalarProperty Name="DTJYYSFZH" ColumnName="DTJYYSFZH" />
+                <ScalarProperty Name="DPJYYSFZH" ColumnName="DPJYYSFZH" />
+                <ScalarProperty Name="CLSSLB" ColumnName="CLSSLB" />
+                <ScalarProperty Name="JCXLB" ColumnName="JCXLB" />
+                <ScalarProperty Name="SJR" ColumnName="SJR" />
+                <ScalarProperty Name="SJRSFZH" ColumnName="SJRSFZH" />
+                <ScalarProperty Name="UDP" ColumnName="UDP" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ComplexResult">
+            <EntityTypeMapping TypeName="YZXModel.ComplexResult">
+              <MappingFragment StoreEntitySet="ComplexResult">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Speed" ColumnName="Speed" />
+                <ScalarProperty Name="p2" ColumnName="p2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FaceTable">
+            <EntityTypeMapping TypeName="YZXModel.FaceTable">
+              <MappingFragment StoreEntitySet="FaceTable">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="SFZH" ColumnName="SFZH" />
+                <ScalarProperty Name="NAME" ColumnName="NAME" />
+                <ScalarProperty Name="JCZBH" ColumnName="JCZBH" />
+                <ScalarProperty Name="JYLSH" ColumnName="JYLSH" />
+                <ScalarProperty Name="HPHM" ColumnName="HPHM" />
+                <ScalarProperty Name="HPZL" ColumnName="HPZL" />
+                <ScalarProperty Name="FEATURES" ColumnName="FEATURES" />
+                <ScalarProperty Name="FACEIMG" ColumnName="FACEIMG" />
+                <ScalarProperty Name="JCSJ" ColumnName="JCSJ" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ParkBFD">
+            <EntityTypeMapping TypeName="YZXModel.ParkBFD">
+              <MappingFragment StoreEntitySet="ParkBFD">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CarInfoID" ColumnName="CarInfoID" />
+                <ScalarProperty Name="jylsh" ColumnName="jylsh" />
+                <ScalarProperty Name="jyjgbh" ColumnName="jyjgbh" />
+                <ScalarProperty Name="jcxdh" ColumnName="jcxdh" />
+                <ScalarProperty Name="jyxm" ColumnName="jyxm" />
+                <ScalarProperty Name="jycs" ColumnName="jycs" />
+                <ScalarProperty Name="yzzczdl" ColumnName="yzzczdl" />
+                <ScalarProperty Name="ezzczdl" ColumnName="ezzczdl" />
+                <ScalarProperty Name="sanzzczdl" ColumnName="sanzzczdl" />
+                <ScalarProperty Name="sizzczdl" ColumnName="sizzczdl" />
+                <ScalarProperty Name="wzzczdl" ColumnName="wzzczdl" />
+                <ScalarProperty Name="zczczdl" ColumnName="zczczdl" />
+                <ScalarProperty Name="tczzdl" ColumnName="tczzdl" />
+                <ScalarProperty Name="tcyzdl" ColumnName="tcyzdl" />
+                <ScalarProperty Name="tczdl" ColumnName="tczdl" />
+                <ScalarProperty Name="tczdpd" ColumnName="tczdpd" />
+                <ScalarProperty Name="UDP" ColumnName="UDP" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Powers">
+            <EntityTypeMapping TypeName="YZXModel.Powers">
+              <MappingFragment StoreEntitySet="Powers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SafaResult">
+            <EntityTypeMapping TypeName="YZXModel.SafaResult">
+              <MappingFragment StoreEntitySet="SafaResult">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Speed" ColumnName="Speed" />
+                <ScalarProperty Name="p2" ColumnName="p2" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Speed">
+            <EntityTypeMapping TypeName="YZXModel.Speed">
+              <MappingFragment StoreEntitySet="Speed">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="jylsh" ColumnName="jylsh" />
+                <ScalarProperty Name="CarInfoID" ColumnName="CarInfoID" />
+                <ScalarProperty Name="Mode" ColumnName="Mode" />
+                <ScalarProperty Name="SDBZ" ColumnName="SDBZ" />
+                <ScalarProperty Name="SDCS" ColumnName="SDCS" />
+                <ScalarProperty Name="SDB" ColumnName="SDB" />
+                <ScalarProperty Name="SDBPJ" ColumnName="SDBPJ" />
+                <ScalarProperty Name="UPD" ColumnName="UPD" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TestResult">
+            <EntityTypeMapping TypeName="YZXModel.TestResult">
+              <MappingFragment StoreEntitySet="TestResult">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="JYLSH" ColumnName="JYLSH" />
+                <ScalarProperty Name="JYJGBH" ColumnName="JYJGBH" />
+                <ScalarProperty Name="JCXDH" ColumnName="JCXDH" />
+                <ScalarProperty Name="JYXM" ColumnName="JYXM" />
+                <ScalarProperty Name="UDP" ColumnName="UDP" />
+                <ScalarProperty Name="Satatus" ColumnName="Satatus" />
+                <ScalarProperty Name="Shape" ColumnName="Shape" />
+                <ScalarProperty Name="SideSlide" ColumnName="SideSlide" />
+                <ScalarProperty Name="Speed" ColumnName="Speed" />
+                <ScalarProperty Name="Light" ColumnName="Light" />
+                <ScalarProperty Name="Brake" ColumnName="Brake" />
+                <ScalarProperty Name="Weigh" ColumnName="Weigh" />
+                <ScalarProperty Name="Bottom" ColumnName="Bottom" />
+                <ScalarProperty Name="BoottomInterval" ColumnName="BoottomInterval" />
+                <ScalarProperty Name="SoundLevel" ColumnName="SoundLevel" />
+                <ScalarProperty Name="Power" ColumnName="Power" />
+                <ScalarProperty Name="FuelConsumption" ColumnName="FuelConsumption" />
+                <ScalarProperty Name="Exhaust" ColumnName="Exhaust" />
+                <ScalarProperty Name="Balancer" ColumnName="Balancer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TestSpeed">
+            <EntityTypeMapping TypeName="YZXModel.TestSpeed">
+              <MappingFragment StoreEntitySet="TestSpeed">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="csdscz" ColumnName="csdscz" />
+                <ScalarProperty Name="csbpd" ColumnName="csbpd" />
+                <ScalarProperty Name="UDP" ColumnName="UDP" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="YZXModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="PWD" ColumnName="PWD" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WaitDetection">
+            <EntityTypeMapping TypeName="YZXModel.WaitDetection">
+              <MappingFragment StoreEntitySet="WaitDetection">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CarInfoId" ColumnName="CarInfoId" />
+                <ScalarProperty Name="jylsh" ColumnName="jylsh" />
+                <ScalarProperty Name="LineID" ColumnName="LineID" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="UDP" ColumnName="UDP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

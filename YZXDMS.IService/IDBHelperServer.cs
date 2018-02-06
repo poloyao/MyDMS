@@ -7,7 +7,7 @@ using YZXDMS.Models;
 
 namespace YZXDMS.IService
 {
-    public interface IDBHelperService
+    public interface IDBHelperServer
     {
         /// <summary>
         /// 检测数据库是否存在
@@ -27,5 +27,8 @@ namespace YZXDMS.IService
         /// <param name="line"></param>
         /// <returns></returns>
         List<WaitDetection> GetWaitDetectionsByStatus(int status, int line);
+
+
+        List<Users> GetUsers();
     }
 }

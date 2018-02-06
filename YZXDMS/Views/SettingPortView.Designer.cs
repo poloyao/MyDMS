@@ -126,7 +126,7 @@
             this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.tileView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(690, 569);
+            this.gridControl1.Size = new System.Drawing.Size(1001, 569);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.tileView1});
@@ -267,16 +267,16 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(690, 569);
+            this.panel1.Size = new System.Drawing.Size(1001, 569);
             this.panel1.TabIndex = 1;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.Control;
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(688, 0);
+            this.panel3.Location = new System.Drawing.Point(1001, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(323, 669);
+            this.panel3.Size = new System.Drawing.Size(10, 669);
             this.panel3.TabIndex = 3;
             // 
             // panel2
@@ -286,13 +286,13 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 572);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(688, 97);
+            this.panel2.Size = new System.Drawing.Size(1001, 97);
             this.panel2.TabIndex = 4;
             // 
             // button2
             // 
             this.button2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button2.Location = new System.Drawing.Point(570, 25);
+            this.button2.Location = new System.Drawing.Point(883, 25);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(103, 40);
             this.button2.TabIndex = 1;
@@ -303,7 +303,7 @@
             // button1
             // 
             this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(457, 25);
+            this.button1.Location = new System.Drawing.Point(770, 25);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(103, 40);
             this.button1.TabIndex = 0;

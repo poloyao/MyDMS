@@ -421,4 +421,20 @@ namespace YZXDMS.Models
 
 
 
+    public class DBSetting
+    {
+        [Key]
+        public long ID { get; set; }
+
+        public int DBType { get; set; }
+
+        public string IP { get; set; }
+
+        public string PWD { get; set; }
+
+        public int Status { get; set; }
+    }
+
+
+
 }

@@ -62,9 +62,9 @@ namespace YZXDMS
             {
                 Name = "主控",
                 MenuItems = new List<MenuItem>() {
-                new MenuItem() { Name = "主控检测" },
+                new MenuItem() { Name = "主控检测", ControlType = typeof(Views.Master.MasterView)  },
                 new MenuItem() { Name = "待检车辆", ControlType = typeof(Views.Master.AssignCarView) },
-                new MenuItem() { Name = "车籍信息" },
+                new MenuItem() { Name = "车籍信息", ControlType = typeof(Views.Master.CarInfoView)  },
                 new MenuItem() { Name = "信息查询", ControlType = typeof(Views.Master.QueryCarInfoView) }
             }
             });
@@ -73,8 +73,8 @@ namespace YZXDMS
             {
                 Name = "参数设置",
                 MenuItems = new List<MenuItem>() {
-                new MenuItem() { Name = "基本参数" },
-                new MenuItem() { Name = "时间参数" }
+                new MenuItem() { Name = "基本参数",ControlType = typeof(Views.Settings.SettingBaseView) },
+                new MenuItem() { Name = "时间参数",ControlType = typeof(Views.Settings.SettingTimeView) }
             }
             });
 
@@ -180,6 +180,13 @@ namespace YZXDMS
         {
             Console.WriteLine(((DevExpress.XtraNavBar.NavElement)sender).Caption);
             navigationFrame1.SelectedPageIndex = 2;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //this.Close();
+            //this.Dispose();
+            //Application.Exit();
         }
     }
 

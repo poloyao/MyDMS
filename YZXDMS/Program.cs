@@ -14,7 +14,9 @@ namespace YZXDMS
         [STAThread]
         static void Main()
         {
-            var eww = Data.SQLiteProvider.DBExists();
+            //var eww = Data.SQLiteProvider.DBExists();
+
+
 
             //var svc = Data.CurrentDB.GetInstance();
             //var sdss = svc.DBSvc.GetWaitDetectionsByStatus(1, 1);
@@ -47,15 +49,30 @@ namespace YZXDMS
 
             //var ewew = sqlite.Update("PortConfig", Helper.EntityToDictionary.ToMap(portInfo), "id", 19);
 
-
+            //var svc = Data.CurrentDB.GetInstance();
+            //var sasd = svc.DBSvc.GetUsers();
+            
 
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            //Application.Run(new Login());
 
 
-            
+            Login fl = new Login();
+            fl.ShowDialog();
+            if (fl.IsOK)
+            {
+                fl.Close();
+                Application.Run(new Form1());
+            }
+            else
+            {
+                return;
+            }
+
+
         }
     }
 }

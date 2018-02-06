@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YZXDMS.Helper", "YZXDMS.Hel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{011FFABE-95C7-481C-AFEF-A715DCA59B91}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YZXDMS.SQLServer", "YZXDMS.SQLServer\YZXDMS.SQLServer.csproj", "{C598CF5B-7417-4D90-83B9-64156FF3ECA5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{011FFABE-95C7-481C-AFEF-A715DCA59B91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{011FFABE-95C7-481C-AFEF-A715DCA59B91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{011FFABE-95C7-481C-AFEF-A715DCA59B91}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C598CF5B-7417-4D90-83B9-64156FF3ECA5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C598CF5B-7417-4D90-83B9-64156FF3ECA5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C598CF5B-7417-4D90-83B9-64156FF3ECA5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C598CF5B-7417-4D90-83B9-64156FF3ECA5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
