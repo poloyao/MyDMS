@@ -25,13 +25,12 @@ namespace YZXDMS.SQLServer
             {
                 try
                 {
-
+                    result = db.Users.ToList();
                 }
                 catch (Exception ex)
                 {
-                    //Helper.NLogHelper.log.Error(ex.Message);
-                }
-                result = db.Users.ToList();
+                    Helper.NLogHelper.log.Error(ex.Message);
+                }                
             }
 
             return result;

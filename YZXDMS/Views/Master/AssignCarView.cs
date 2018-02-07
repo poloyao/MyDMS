@@ -17,8 +17,8 @@ namespace YZXDMS.Views.Master
         {
             InitializeComponent();
             //Mybug 后期修改为某段时间内的信息展示，防止数据量过多。
-            this.gridControl1.DataSource = Data.CurrentDB.GetInstance().DBSvc.GetWaitDetections();
-            this.gridControl2.DataSource = Data.CurrentDB.GetInstance().DBSvc.GetWaitDetectionsByStatus(1, 1);
+            //this.gridControl1.DataSource = Data.CurrentDB.GetInstance().DBSvc.GetWaitDetections();
+            //this.gridControl2.DataSource = Data.CurrentDB.GetInstance().DBSvc.GetWaitDetectionsByStatus(1, 1);
 
         }
 
