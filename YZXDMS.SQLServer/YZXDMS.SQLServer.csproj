@@ -119,6 +119,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\YZXDMS.Helper\YZXDMS.Helper.csproj">
+      <Project>{9e1ca8a2-1263-4086-84f4-397d6cbe6fa5}</Project>
+      <Name>YZXDMS.Helper</Name>
+    </ProjectReference>
     <ProjectReference Include="..\YZXDMS.IService\YZXDMS.IService.csproj">
       <Project>{21F8AD4B-CE02-4B96-9A24-BACE703E43D7}</Project>
       <Name>YZXDMS.IService</Name>

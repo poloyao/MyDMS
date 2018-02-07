@@ -430,6 +430,8 @@ namespace YZXDMS.Models
 
         public string IP { get; set; }
 
+        public string Port { get; set; }
+
         public string PWD { get; set; }
 
         public int Status { get; set; }

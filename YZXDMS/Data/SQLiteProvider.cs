@@ -81,7 +81,7 @@ namespace YZXDMS.Data
                 result = ex.Message;
                 Helper.NLogHelper.log.Error(ex.Message);
             }
-            return result; 
+            return result;
         }
 
 
@@ -150,7 +150,7 @@ namespace YZXDMS.Data
                 if (isEdit)
                     affectRow = sqlite.Update("PortConfig", Helper.EntityToDictionary.ToMap(portInfo), "id", portInfo.Id);
                 else
-                    affectRow = sqlite.Insert("PortConfig", Helper.EntityToDictionary.ToMap(portInfo,"id"));
+                    affectRow = sqlite.Insert("PortConfig", Helper.EntityToDictionary.ToMap(portInfo, "id"));
 
                 if (affectRow == 1)
                     result = string.Empty;
@@ -229,7 +229,29 @@ namespace YZXDMS.Data
             return null;
         }
 
-        public static string SaveDBSetting(int dbType,string ip,string pwd)
+        public static string GetDBPath()
+        {
+            string result = string.Empty;
+            var query = GetDBSetting();
+            if (query != null || query.Count > 0)
+            {
+                var data = query.Last();
+                var pwd = DES.DecryptDES(data.PWD, "syyzx2018");
+                result = $"data source={data.IP},{data.Port};initial catalog=YZX;user id=sa;password={pwd};";
+            }
+            return result;
+
+        }
+
+        /// <summary>
+        /// 保存，返回值非empty则错误；
+        /// </summary>
+        /// <param name="dbType"></param>
+        /// <param name="ip"></param>
+        /// <param name="port"></param>
+        /// <param name="pwd"></param>
+        /// <returns></returns>
+        public static string SaveDBSetting(int dbType,string ip,string port, string pwd)
         {
             string result = string.Empty;
             var sqlite = Helper.SQLiteDBHelper.sqliteHelper;
@@ -239,6 +261,7 @@ namespace YZXDMS.Data
                 var dicData = new Dictionary<string, object>();
                 dicData.Add("DBType", dbType);
                 dicData.Add("IP", ip);
+                dicData.Add("Port", port);
                 dicData.Add("PWD", pwd);
                 dicData.Add("Status", 0);
 
@@ -258,5 +281,6 @@ namespace YZXDMS.Data
             }
             return result;
         }
+        
     }
 }

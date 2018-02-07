@@ -29,7 +29,8 @@ namespace YZXDMS
             //IContainer container = builder.Build();
 
             var svc = Data.CurrentDB.GetInstance();
-            var as444 = svc.DBSvc.GetWaitDetectionsByStatus(1, 1);
+            var sss = svc.DBSvc.GetUsers();
+            //var as444 = svc.DBSvc.GetWaitDetectionsByStatus(1, 1);
 
             //var dbSvc = IocContainer.Instance;
 

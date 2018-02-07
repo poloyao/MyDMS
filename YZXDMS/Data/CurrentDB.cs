@@ -17,6 +17,7 @@ namespace YZXDMS.Data
 
         public static CurrentDB GetInstance()
         {
+            Instance.DBSvc.SetPath(Data.SQLiteProvider.GetDBPath());
             return Instance;
         }
 

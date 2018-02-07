@@ -8,7 +8,6 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using UseIdentity;
 
 namespace YZXDMS
 {
@@ -117,9 +116,9 @@ namespace YZXDMS
             }
             else
             {
-                var result = Common.UserLogin(this.textBox1.Text.Trim(), this.textBox2.Text.Trim(), Common.GetLocalIP(), "主控");
+                //var result = Common.UserLogin(this.textBox1.Text.Trim(), this.textBox2.Text.Trim(), Common.GetLocalIP(), "主控");
                 this.label4.Visible = true;
-                this.label4.Text = result;
+                //this.label4.Text = result;
             }
         }
     }

@@ -120,5 +120,10 @@ namespace YZXDMS.MySQLService
             }
             return result;
         }
+
+        public void SetPath(string path)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

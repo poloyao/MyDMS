@@ -76,8 +76,12 @@ namespace YZXDMS.Views
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var pwd = Des.DESHelper.EncryptDES(this.textBox2.Text.Trim(), "syyzx2018");
-            var query = Data.SQLiteProvider.SaveDBSetting(0, this.textBox1.Text.Trim(), pwd);
+            var pwd = Helper.DES.EncryptDES(this.textBox2.Text.Trim(), "syyzx2018");
+            var query = Data.SQLiteProvider.SaveDBSetting(0, this.textBox1.Text.Trim(),this.textBox3.Text.Trim(), pwd);
+            if (query != string.Empty)
+                MessageBox.Show(query);
+            else
+                this.Close();
         }
     }
 }

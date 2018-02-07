@@ -9,6 +9,8 @@ namespace YZXDMS.IService
 {
     public interface IDBHelperServer
     {
+
+        void SetPath(string path);
         /// <summary>
         /// 检测数据库是否存在
         /// </summary>

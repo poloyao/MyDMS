@@ -67,5 +67,6 @@ namespace YZXDMS.Utility
             var provider = Provider.Value;
             return provider.Container.Resolve<T>();
         }
+        
     }
 }

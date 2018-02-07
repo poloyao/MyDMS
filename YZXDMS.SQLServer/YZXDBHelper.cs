@@ -10,7 +10,7 @@ namespace YZXDMS.SQLServer
 {
     public class YZXDBHelper : IDBHelperServer
     {
-        string connection = "data source=192.168.1.107,50668;initial catalog=YZX;user id=sa;password=yzx;";
+        string connection;//= "data source=192.168.1.107,50668;initial catalog=YZX;user id=sa;password=yzx;";
         public bool DBExists()
         {
             //throw new NotImplementedException();
@@ -19,12 +19,22 @@ namespace YZXDMS.SQLServer
 
         public List<Models.Users> GetUsers()
         {
+            List<Models.Users> result = new List<Models.Users>();
+
             using (var db = new YZXSQLServerContext(connection))
             {
-                var asss = db.Users.ToList();
+                try
+                {
+
+                }
+                catch (Exception ex)
+                {
+                    //Helper.NLogHelper.log.Error(ex.Message);
+                }
+                result = db.Users.ToList();
             }
 
-            return null;
+            return result;
         }
 
         public List<YZXDMS.Models.WaitDetection> GetWaitDetections()
@@ -36,6 +46,10 @@ namespace YZXDMS.SQLServer
         {
             throw new NotImplementedException();
         }
-        
+
+        public void SetPath(string path)
+        {
+            this.connection = path;
+        }
     }
 }
