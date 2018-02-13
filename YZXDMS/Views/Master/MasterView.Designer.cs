@@ -186,7 +186,8 @@
             this.simpleButton7.Name = "simpleButton7";
             this.simpleButton7.Size = new System.Drawing.Size(122, 40);
             this.simpleButton7.TabIndex = 11;
-            this.simpleButton7.Text = "一工位复位";
+            this.simpleButton7.Text = "开始检测";
+            this.simpleButton7.Click += new System.EventHandler(this.simpleButton7_Click);
             // 
             // simpleButton12
             // 
@@ -205,6 +206,7 @@
             this.simpleButton6.Size = new System.Drawing.Size(122, 40);
             this.simpleButton6.TabIndex = 5;
             this.simpleButton6.Text = "设备初始化";
+            this.simpleButton6.Click += new System.EventHandler(this.simpleButton6_Click);
             // 
             // simpleButton4
             // 
@@ -278,7 +280,13 @@
             this.colBalancer});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsBehavior.AllowAddRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsBehavior.AllowDeleteRows = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsBehavior.Editable = false;
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedRow = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.OptionsView.ShowIndicator = false;
             // 
             // colSerialData
             // 
